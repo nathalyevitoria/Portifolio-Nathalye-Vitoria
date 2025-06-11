@@ -1,0 +1,233 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Barra de navegação */
+
+header{
+position: fixed;
+  width: min(1300px, 100%);
+  height: 60px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: #6718ce;
+        text-shadow: 0 0 5px #ff31dd;
+}
+
+.page {
+    padding: 3rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* HOME */
+section{
+width: min(1300px, 100%);
+  margin: auto;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.home{
+  padding-top: 150px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name {
+    font-size: 6.5em;
+        font-weight: bold;
+        line-height: 1em;
+}
+
+span {
+    background-image: linear-gradient(to right, #ff31dd, #6718ce, #8629ff, #ff31dd);
+    background-size: 200% auto;
+    animation: gradientAnimation 5s linear infinite;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.cv-button {
+    color: #eee;
+    font-size: large;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid #eee;
+    padding: 20px 30px;
+    border-radius: 40px;
+    margin-top: 30px;
+    display: block;
+    width: max-content;
+}
+
+.des {
+    color: #eee5;
+        margin: 30px 0;
+        border-left: .7em solid #ff31dd;
+        padding-left: 2em;
+}
+
+.avatar{
+    text-align: right;
+}
+
+.card {
+    display: inline-flex;
+        flex-direction: column;
+        width: min(100%, 400px);
+        box-shadow: 0 150px 150px #9a45e933;
+        transition: 0.5s;
+}
+.card:hover {
+    box-shadow: 0 150px 150px #e945db55;
+}
+
+.img{
+          width: 100%;
+          height: min(700px, 50vh);
+          object-fit: cover;
+          object-position: top;
+          clip-path: polygon(81% 0, 100% 18%, 100% 100%, 0 100%, 0 0);
+        }
+
+/* Projetos */
+#project{
+    background-color: #cfbaba;
+    color: #444b57;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding-top: 5rem;
+}
+
+#project .list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 50px;
+}
+
+#project .list .item img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+#project .list .item{
+    border-radius: 30px;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+#project .list .item .index{
+    font-weight: bold;
+    font-size: 1.5em;
+    position: absolute;
+    transform: translateY(-100%);
+    background-color: #fff;
+    padding: 10px;
+    font-style: italic;
+    border-top-right-radius: 20px;
+}
+
+#project .list .name{
+    font-weight: bold;
+    font-size: large;
+    padding: 10px;
+}
+
+#project .list .item .text{
+    padding: 0 10px 10px 10px;
+    font-size: small;
+}
+
+#project .list .item .author{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+
+#project .list .item .link{
+    font-weight: bold;    
+    color: dodgerblue;
+}
+
+
+/* Contato */
+#contact{
+    background-color: #242330;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#contact .thank{
+    font-size: 5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#contact .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+#contact .des{
+    width: 500px;
+    max-width: 80%;
+    text-align: center;
+}
+
+#contact .list{
+    text-align: center;
+}
+
+#contact .list .item{
+    display: inline-block;
+    margin: 10px 30px;
+}
