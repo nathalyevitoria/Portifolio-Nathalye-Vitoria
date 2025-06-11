@@ -6,7 +6,7 @@ function Projects() {
         <div className="list">
 
           <div class="item">
-            <img src="/src/assets/image.png" alt="" />
+            <img src="./src/assets/image.png" alt="" />
             <div class="index">#1</div>
             <div class="name">Name Project</div>
             <div class="text">
@@ -21,7 +21,7 @@ function Projects() {
           </div>
 
           <div class="item">
-            <img src="/src/assets/image.png" alt="" />
+            <img src="./src/assets/image.png" alt="" />
             <div class="index">#1</div>
             <div class="name">Name Project</div>
             <div class="text">
@@ -36,7 +36,7 @@ function Projects() {
           </div>
 
           <div class="item">
-            <img src="/src/assets/image.png" alt="" />
+            <img src="./src/assets/image.png" alt="" />
             <div class="index">#1</div>
             <div class="name">Name Project</div>
             <div class="text">
@@ -51,7 +51,7 @@ function Projects() {
           </div>
 
           <div class="item">
-            <img src="/src/assets/image.png" alt="" />
+            <img src="./src/assets/image.png" alt="" />
             <div class="index">#1</div>
             <div class="name">Name Project</div>
             <div class="text">
@@ -66,7 +66,7 @@ function Projects() {
           </div>
 
           <div class="item">
-            <img src="/src/assets/image.png" alt="" />
+            <img src="./src/assets/image.png" alt="" />
             <div class="index">#1</div>
             <div class="name">Name Project</div>
             <div class="text">
@@ -81,7 +81,7 @@ function Projects() {
           </div>
 
           <div class="item">
-            <img src="/src/assets/image.png" alt="" />
+            <img src="./src/assets/image.png" alt="" />
             <div class="index">#1</div>
             <div class="name">Name Project</div>
             <div class="text">
@@ -96,7 +96,7 @@ function Projects() {
           </div>
 
           <div class="item">
-            <img src="/src/assets/image.png" alt="" />
+            <img src="./src/assets/image.png" alt="" />
             <div class="index">#1</div>
             <div class="name">Name Project</div>
             <div class="text">
@@ -111,7 +111,7 @@ function Projects() {
           </div>
 
           <div class="item">
-            <img src="/src/assets/image.png" alt="" />
+            <img src="./src/assets/image.png" alt="" />
             <div class="index">#1</div>
             <div class="name">Name Project</div>
             <div class="text">
@@ -126,7 +126,7 @@ function Projects() {
           </div>
 
           <div class="item">
-            <img src="/src/assets/image.png" alt="" />
+            <img src="./src/assets/image.png" alt="" />
             <div class="index">#1</div>
             <div class="name">Name Project</div>
             <div class="text">
@@ -141,7 +141,7 @@ function Projects() {
           </div>
 
           <div class="item">
-            <img src="/src/assets/image.png" alt="" />
+            <img src="./src/assets/image.png" alt="" />
             <div class="index">#1</div>
             <div class="name">Name Project</div>
             <div class="text">
@@ -156,7 +156,7 @@ function Projects() {
           </div>
 
           <div class="item">
-            <img src="/src/assets/image.png" alt="" />
+            <img src="./src/assets/image.png" alt="" />
             <div class="index">#1</div>
             <div class="name">Name Project</div>
             <div class="text">

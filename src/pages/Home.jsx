@@ -14,7 +14,7 @@ function Home() {
       </div>
       <div className='avatar'>
         <div className='card'>
-          <img className="img" src='/src/assets/image.png' alt='perfil'/>
+          <img className="img" src='./src/assets/image.png' alt='perfil'/>
         </div>
       </div>
         </div>
