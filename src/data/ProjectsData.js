@@ -66,5 +66,5 @@ export const projects = [
       { type: "image", src: "/fonte3.jpeg" },
       { type: "image", src: "/fonte4.jpeg" },
     ],
-  },
+  },  
 ];
