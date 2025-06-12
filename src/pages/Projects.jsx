@@ -1,177 +1,29 @@
+import { Link } from "react-router-dom";
+import { projects } from "../data/ProjectsData.js";
+
 function Projects() {
   return (
-    // Projects.jsx
     <div id="project">
-      <div class="container-project">
+      <div className="container-project">
         <div className="list">
-
-          <div class="item">
-            <img src="/image.png" alt="" />
-            <div class="index">#1</div>
-            <div class="name">Name Project</div>
-            <div class="text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic,
-              ullam? Quis, iure earum dolor cum magnam deserunt quas fuga
-              laboriosam, debitis doloremque rerum nihil delectus eligendi
-              consequuntur incidunt, illo fugit.
+          {projects.map((project, index) => (
+            <div className="item" key={project.id}>
+              <img src={project.image} alt={project.name} />
+              <div className="index">#{index + 1}</div>
+              <div className="name">{project.name}</div>
+              <div className="text">
+                {project.description.length > 100
+                  ? project.description.slice(0, 200) + "..."
+                  : project.description}
+              </div>
+              <div className="author">
+                <Link to={`/projects/${project.id}`} className="link">
+                  Ver Projeto -{">"}
+                </Link>
+              </div>
             </div>
-            <div class="author">
-              <a href="#" class="link">Ver Projeto -{">"}</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="/image.png" alt="" />
-            <div class="index">#1</div>
-            <div class="name">Name Project</div>
-            <div class="text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic,
-              ullam? Quis, iure earum dolor cum magnam deserunt quas fuga
-              laboriosam, debitis doloremque rerum nihil delectus eligendi
-              consequuntur incidunt, illo fugit.
-            </div>
-            <div class="author">
-              <a href="#" class="link">Ver Projeto -{">"}</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="/image.png" alt="" />
-            <div class="index">#1</div>
-            <div class="name">Name Project</div>
-            <div class="text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic,
-              ullam? Quis, iure earum dolor cum magnam deserunt quas fuga
-              laboriosam, debitis doloremque rerum nihil delectus eligendi
-              consequuntur incidunt, illo fugit.
-            </div>
-            <div class="author">
-              <a href="#" class="link">Ver Projeto -{">"}</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="/image.png" alt="" />
-            <div class="index">#1</div>
-            <div class="name">Name Project</div>
-            <div class="text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic,
-              ullam? Quis, iure earum dolor cum magnam deserunt quas fuga
-              laboriosam, debitis doloremque rerum nihil delectus eligendi
-              consequuntur incidunt, illo fugit.
-            </div>
-            <div class="author">
-              <a href="#" class="link">Ver Projeto -{">"}</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="/image.png" alt="" />
-            <div class="index">#1</div>
-            <div class="name">Name Project</div>
-            <div class="text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic,
-              ullam? Quis, iure earum dolor cum magnam deserunt quas fuga
-              laboriosam, debitis doloremque rerum nihil delectus eligendi
-              consequuntur incidunt, illo fugit.
-            </div>
-            <div class="author">
-              <a href="#" class="link">Ver Projeto -{">"}</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="/image.png" alt="" />
-            <div class="index">#1</div>
-            <div class="name">Name Project</div>
-            <div class="text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic,
-              ullam? Quis, iure earum dolor cum magnam deserunt quas fuga
-              laboriosam, debitis doloremque rerum nihil delectus eligendi
-              consequuntur incidunt, illo fugit.
-            </div>
-            <div class="author">
-              <a href="#" class="link">Ver Projeto -{">"}</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="/image.png" alt="" />
-            <div class="index">#1</div>
-            <div class="name">Name Project</div>
-            <div class="text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic,
-              ullam? Quis, iure earum dolor cum magnam deserunt quas fuga
-              laboriosam, debitis doloremque rerum nihil delectus eligendi
-              consequuntur incidunt, illo fugit.
-            </div>
-            <div class="author">
-              <a href="#" class="link">Ver Projeto -{">"}</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="/image.png" alt="" />
-            <div class="index">#1</div>
-            <div class="name">Name Project</div>
-            <div class="text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic,
-              ullam? Quis, iure earum dolor cum magnam deserunt quas fuga
-              laboriosam, debitis doloremque rerum nihil delectus eligendi
-              consequuntur incidunt, illo fugit.
-            </div>
-            <div class="author">
-              <a href="#" class="link">Ver Projeto -{">"}</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="/image.png" alt="" />
-            <div class="index">#1</div>
-            <div class="name">Name Project</div>
-            <div class="text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic,
-              ullam? Quis, iure earum dolor cum magnam deserunt quas fuga
-              laboriosam, debitis doloremque rerum nihil delectus eligendi
-              consequuntur incidunt, illo fugit.
-            </div>
-            <div class="author">
-              <a href="#" class="link">Ver Projeto -{">"}</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="/image.png" alt="" />
-            <div class="index">#1</div>
-            <div class="name">Name Project</div>
-            <div class="text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic,
-              ullam? Quis, iure earum dolor cum magnam deserunt quas fuga
-              laboriosam, debitis doloremque rerum nihil delectus eligendi
-              consequuntur incidunt, illo fugit.
-            </div>
-            <div class="author">
-              <a href="#" class="link">Ver Projeto -{">"}</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <img src="/image.png" alt="" />
-            <div class="index">#1</div>
-            <div class="name">Name Project</div>
-            <div class="text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic,
-              ullam? Quis, iure earum dolor cum magnam deserunt quas fuga
-              laboriosam, debitis doloremque rerum nihil delectus eligendi
-              consequuntur incidunt, illo fugit.
-            </div>
-            <div class="author">
-              <a href="#" class="link">Ver Projeto -{">"}</a>
-            </div>
-          </div>
-
+          ))}
         </div>
-        
       </div>
     </div>
   );

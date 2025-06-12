@@ -2,8 +2,8 @@ function Contact() {
   return (
     // Contact.jsx
     <div id="contact">
-      <div class="container">
-        <div class="thank text-gradient">Thank You!</div>
+      <div className="container">
+        <div className="thank text-gradient">Thank You!</div>
         <h2>Contato</h2>
         <div className="list">
           <div className="item">
