@@ -4,7 +4,7 @@ export const projects = [
     name: "Relógio Digital – Projeto de Eletrônica Digital (SENAI)",
     description:
       "Este relógio digital foi desenvolvido como parte da disciplina de Eletrônica Digital no curso de Aprendizagem Industrial de Eletricista de Manutenção Eletroeletrônica do SENAI. O projeto teve como objetivo aplicar os conhecimentos teóricos na prática, utilizando circuitos lógicos, displays de 7 segmentos e contadores digitais para mostrar as horas de forma precisa. Com uma montagem funcional e visual limpa, o relógio demonstra o domínio de conceitos como temporização, decodificação e controle de sinais, sendo um exemplo prático de automação e eletrônica aplicada.",
-    image: "relogio1.jpeg",
+    image: "relogio-capa.jpeg",
     media: [
       { type: "image", src: "/relogio1.jpeg" },
       { type: "image", src: "/relogio2.jpeg" },

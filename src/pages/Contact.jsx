@@ -9,10 +9,13 @@ function Contact() {
         <h2>Contato</h2>
         <div className="list">
           <div className="item">
-            <p><span>Email:</span> vitoria@email.com</p>
+            <p><span>Email:</span> nathalye277@gmail.com</p>
           </div>
           <div className="item">
-            <p><span>LinkedIn:</span> linkedin.com/in/seu_linkedin</p>
+            <p><span>Telefone:</span> (11) 95319-2603</p>
+          </div>
+          <div className="item">
+            <p><span>LinkedIn:</span> https://www.linkedin.com/in/nathalye-felix-17689a205/</p>
           </div>
         </div>
       </div>
