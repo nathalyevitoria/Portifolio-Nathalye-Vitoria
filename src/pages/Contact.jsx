@@ -5,7 +5,7 @@ function Contact() {
       <div class="blur-circle c1"></div>
       <div class="blur-circle c2"></div>
       <div className="container">
-        <div className="thank text-gradient">Thank You!</div>
+        <div className="thank text-gradient">Obrigada!</div>
         <h2>Contato</h2>
         <div className="list">
           <div className="item">

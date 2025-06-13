@@ -5,10 +5,10 @@ function Home() {
       <div className="home">
         <div className="content">
           <div className="name">
-            MEU NOME É <span>VITÓRIA</span>
+            BEM <span>VINDO!</span>
           </div>
           <div className="des">
-            Olá, sou a Nathalye Vitoria, estudante do curso Técnico em
+            Olá, sou a <span>Nathalye Vitoria</span>, estudante do curso Técnico em
             Mecatrônica, pelo IFSP - campus Guarulhos e faço o CAI de
             Eletricista de Manutenção Eletroeletrônica no Senai Hermenegildo
             Campos de Almeida.
