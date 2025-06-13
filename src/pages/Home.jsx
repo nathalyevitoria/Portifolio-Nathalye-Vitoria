@@ -1,6 +1,6 @@
 function Home() {
   return (
-    <section>
+    <section className="over-hidden">
       <div className="blur-circle c1"></div>
       <div className='home'>
         <div  className="content">

@@ -64,12 +64,19 @@ width: min(1300px, 100%);
 }
 
 .home{
-  padding-top: 150px;
+  padding: 150px 300px 0 300px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
     justify-content: space-between;
     align-items: center;
+}
+
+.over-hidden {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
 }
 
 .name {
