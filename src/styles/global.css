@@ -141,7 +141,7 @@ span {
 
 .img{
           width: 100%;
-          height: min(700px, 50vh);
+          height: min(900px, 60vh);
           object-fit: cover;
           object-position: top;
           clip-path: polygon(81% 0, 100% 18%, 100% 100%, 0 100%, 0 0);
