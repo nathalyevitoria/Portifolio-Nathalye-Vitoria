@@ -64,7 +64,7 @@ width: min(1300px, 100%);
 }
 
 .home{
-  padding: 150px 300px 0 300px;
+  padding: 100px 250px 0 250px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
