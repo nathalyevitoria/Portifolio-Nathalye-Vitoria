@@ -7,9 +7,9 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0f172a;
+    background-color: #eef0fa;
     line-height: 1.6;
-    color: #ffffff;
+    color: #111111;
 }
 
 a {
@@ -46,7 +46,7 @@ nav a {
 
 nav a:hover {
     color: #6718ce;
-        text-shadow: 0 0 5px #ff31dd;
+        text-shadow: 0 0 5px #3172ff;
 }
 
 .page {
@@ -79,7 +79,7 @@ width: min(1300px, 100%);
 }
 
 span {
-    background-image: linear-gradient(to right, #ff31dd, #6718ce, #8629ff, #ff31dd);
+    background-image: linear-gradient(to right, #3172ff, #6718ce, #8629ff, #3172ff);
     background-size: 200% auto;
     animation: gradientAnimation 5s linear infinite;
     -webkit-text-fill-color: transparent;
@@ -87,11 +87,10 @@ span {
 }
 
 .cv-button {
-    color: #eee;
     font-size: large;
     font-weight: bold;
     text-decoration: none;
-    border: 1px solid #eee;
+    border: 2px solid #1b1b1b;
     padding: 20px 30px;
     border-radius: 40px;
     margin-top: 30px;
@@ -100,9 +99,8 @@ span {
 }
 
 .des {
-    color: #eee5;
         margin: 30px 0;
-        border-left: .7em solid #ff31dd;
+        border-left: .7em solid #3172ff;
         padding-left: 2em;
 }
 
@@ -131,7 +129,7 @@ span {
         transition: 0.5s;
 }
 .card:hover {
-    box-shadow: 0 150px 150px #e945db55;
+    box-shadow: 0 150px 150px #4587e955;
 }
 
 .img{
@@ -144,7 +142,6 @@ span {
 
 /* Projetos */
 #project{
-    background-color: #cfbaba;
     color: #444b57;
     display: flex;
     height: 100vh;
@@ -169,17 +166,17 @@ span {
 
 #project .list .item{
     border-radius: 30px;
-    background-color: #ffffff6b;
+    background-color: #ffffff;
     overflow: hidden;
     position: relative;
 }
 
 #project .list .item:hover{
-    background-color: #ffffff;
+    background-color: #c7cedd;
 }
 
 #project .list .item:hover .index{
-    background-color: #ffffff;
+    background-color: #c7cedd;
 }
 
 #project .list .item .index{
@@ -187,7 +184,7 @@ span {
     font-size: 1.5em;
     position: absolute;
     transform: translateY(-110%);
-    background-color: #ffffff6b;
+    background-color: #ffffff;
     padding: 10px;
     font-style: italic;
     border-top-right-radius: 20px;
@@ -264,12 +261,13 @@ span {
 
 /* Contato */
 #contact{
-    background-color: #242330;
     display: flex;
     height: 100vh;
     justify-content: center;
     overflow: hidden;
+    position: relative;
 }
+
 
 #contact .thank{
     font-size: 5em;
@@ -300,3 +298,63 @@ span {
     margin: 10px 30px;
 }
 
+.blur-circle {
+  position: absolute;
+  transform: translate(-50%, -50%);  
+  border-radius: 50%;  
+  filter: blur(100px);
+  z-index: -1;
+}
+
+.c1 {
+top: 80%;
+  left: 10%;
+  width: 40rem;
+  height: 40rem;  
+  opacity: 0.1;
+  background: radial-gradient(circle at center, #7f5af0, #00c6ff);
+}
+
+.c2 {
+top: 20%;
+  left: 80%;
+  width: 60rem;
+  height: 60rem;  
+  opacity: 0.1;
+  background: radial-gradient(circle at center, #7f5af0, #8400ff);
+}
+
+
+/* Estilização do botão de modo escuro */
+#darkModeToggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 16px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  font-size: 18px;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+#darkModeToggle:hover {
+  background-color: #333;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+body.dark-mode .cv-button {
+  border: 2px solid #f0f0f0;
+}
+
+/* Exemplo: inverter elementos claros */
+body.dark-mode img {
+  filter: brightness(0.8);
+}

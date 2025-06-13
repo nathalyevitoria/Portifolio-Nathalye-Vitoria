@@ -4,11 +4,13 @@ import Home from './pages/Home'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import ProjectDetail from './pages/ProjectDetails'
+import LightButton from './components/LightButton'
 
 function App() {
   return (
     <>
-      <Navbar />
+      <Navbar />      
+        <LightButton />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />

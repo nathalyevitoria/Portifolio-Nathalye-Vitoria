@@ -4,6 +4,8 @@ import { projects } from "../data/ProjectsData.js";
 function Projects() {
   return (
     <div id="project">
+      <div class="blur-circle c1"></div>
+      <div class="blur-circle c2"></div>
       <div className="container-project">
         <div className="list">
           {projects.map((project, index) => (

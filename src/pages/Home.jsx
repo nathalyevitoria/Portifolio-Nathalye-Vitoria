@@ -1,6 +1,7 @@
 function Home() {
   return (
     <section>
+      <div className="blur-circle c1"></div>
       <div className='home'>
         <div  className="content">
 
@@ -19,6 +20,7 @@ function Home() {
       </div>
         </div>
     </section>
+    
   )
 }
 
