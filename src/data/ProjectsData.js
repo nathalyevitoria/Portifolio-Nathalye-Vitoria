@@ -67,4 +67,73 @@ export const projects = [
       { type: "image", src: "/fonte4.jpeg" },
     ],
   },
+
+  { // id sempre com letras minusculas e sem numeros no começo
+    // craze para textos com formatação em paragrafos
+
+    id: "batman",
+    name: "BATMAN Usinado Em  Uma Frezadora CNC - MILLING MACHiNE",
+    description: `Esta fonte linear foi desenvolvida para fornecer uma tensão de +5V DC estabilizada, adequada para alimentar circuitos digitais, microcontroladores e demais dispositivos que operam em baixa tensão.
+
+    O circuito utiliza um transformador 12V-0-12V / 1A, seguido por um estágio de retificação em ponte, filtragem com capacitor eletrolítico e regulação de tensão através do regulador linear 7805, garantindo uma saída estável e protegida contra sobrecargas térmicas e de corrente. O layout da placa inclui dissipadores de calor para os reguladores, bornes de fácil conexão e LED indicador de funcionamento.
+
+    Características técnicas:
+
+    Tensão de entrada: 12V AC (via transformador)
+
+    Tensão de saída: +5V DC
+
+    Corrente máxima: até 1A
+
+    Regulação com CI 7805
+
+    Filtragem com capacitor de 2200 µF
+
+    Proteção térmica e contra curto-circuito
+
+    Indicador visual de operação (LED)`,
+    image: "/bat.jpeg",
+    media: [
+      { type: "image", src: "/bat.jpeg" },
+      { type: "image", src: "/bat.jpeg" },
+      { type: "image", src: "/bat.jpeg" },
+      { type: "image", src: "/bat.jpeg" },
+    ],
+  }
+
 ];
+
+// // {
+  //   // Template de projeto
+  //   // Obrigatórios letra minuscula no id
+  //   id: "test1", 
+  //   // Título do projeto
+  //   name: "Teste",
+  //   // Utilizar crases em descrição para formatação de parágrafos
+  //   description: `Teste parágrafo 1
+    
+  //   Teste parágrafo 2
+    
+  //   Teste parágrafo 3
+    
+  //   Teste parágrafo 4
+    
+  //   Teste parágrafo 5
+    
+  //   Teste parágrafo 6
+
+  //   Teste parágrafo 7`,
+  //   // Imagem principal que vai ser exibida no card
+  //   image: "/nuvem.jpg",
+  //   // Imagens que vão ser exibidas no carrossel
+  //   media: [
+  //     // Primeira Imagem do carrossel 
+  //     { type: "image", src: "/nuvem.jpeg" },
+  //     // Segunda Imagem do carrossel 
+  //     { type: "image", src: "/nuvem.jpeg" },
+  //     // Terceira Imagem do carrossel 
+  //     { type: "image", src: "/nuvem.jpeg" },
+  //     // Quarta Imagem do carrossel 
+  //     { type: "image", src: "/nuvem.jpeg" },
+  //   ],
+  // },
