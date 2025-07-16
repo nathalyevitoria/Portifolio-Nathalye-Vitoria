@@ -66,5 +66,18 @@ export const projects = [
       { type: "image", src: "/fonte3.jpeg" },
       { type: "image", src: "/fonte4.jpeg" },
     ],
-  },  
+  },
+  {
+    id: "teste",
+    name: "teste",
+    description: `Isso é um teste
+    
+    unicamente um teste
+    
+    nada mais que um teste`,
+    image: "/image.png",
+    media: [
+      { type: "image", src: "/image.png" },
+    ],
+  },
 ];
