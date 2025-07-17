@@ -115,6 +115,7 @@ body.dark-mode .cv-button::after {
   margin: 30px 0;
   border-left: .7em solid #3172ff;
   padding-left: 2em;
+  text-align: justify;
 }
 
 .avatar {
@@ -151,15 +152,6 @@ body.dark-mode .cv-button::after {
   object-fit: cover;
   object-position: top;
   clip-path: polygon(81% 0, 100% 18%, 100% 100%, 0 100%, 0 0);
-}
-
-@media (max-width: 1330px - 1025px) {
-  .cv-button {
-    display: inline-block;
-    margin: 20px auto 0 auto;
-    width: auto;
-    text-align: center;
-  }
 }
 
 /* Responsividade Home */
@@ -207,7 +199,7 @@ body.dark-mode .cv-button::after {
     border-left: none;
     padding-left: 0;
     margin: 20px 0;
-    text-align: center;
+    /* Removido text-align: center para manter justify em todos os tamanhos */
   }
   .avatar {
     margin: 0 auto;
