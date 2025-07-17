@@ -123,9 +123,9 @@ body.dark-mode img {
   margin-top: 4px;
   border-radius: 2px;
   background: linear-gradient(90deg, #3172ff 0%, #6718ce 20%, #8629ff 50%, #3172ff 80%, #6718ce 100%, #8629ff 120%, #3172ff 150%, #3172ff 200%);
-  background-size: 200% 100%;
+  background-size: 800% 100%;
   background-repeat: repeat-x;
-  animation: move-gradient 4s linear infinite;
+  animation: move-gradient 6s linear infinite;
 }
 
 .nav-links a:nth-child(1) .nav-underline {

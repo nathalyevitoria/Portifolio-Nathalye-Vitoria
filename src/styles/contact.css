@@ -77,6 +77,34 @@
   background: transparent;
 }
 
+/* Gradiente animado para texto e borda com loop perfeito */
+.animated-gradient-text,
+.contact-btn::before {
+  background: linear-gradient(90deg,
+    #3172ff 0%, #6718ce 16%, #8629ff 33%, #3172ff 50%, #6718ce 66%, #8629ff 83%, #3172ff 100%
+  );
+  background-size: 300% 100%;
+  background-repeat: repeat-x;
+  animation: move-gradient 8s linear infinite;
+}
+
+@keyframes move-gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+/* Ajuste para .contact-btn.animated-gradient-text para manter o gradiente animado no texto */
+.contact-btn.animated-gradient-text {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
 /* Contêiner para os botões de contato */
 .contact-buttons {
   display: flex;
@@ -105,9 +133,21 @@
   position: relative; /* Necessário para o pseudo-elemento */
   z-index: 1; /* Garante que o conteúdo do botão fique acima do pseudo-elemento */
   background-color: transparent; /* Cor de fundo transparente para o botão */
-  color: #fff; /* Cor do texto padrão para o botão */
+  /* Remover color: #fff; para não sobrescrever o gradiente do texto */
   overflow: hidden; /* Garante que o conteúdo não vaze e respeite o border-radius */
   transition: border-radius 0.2s, background-color 0.2s; /* Transição suave */
+  isolation: isolate; /* Garante que o gradiente do texto não seja afetado pelo ::before */
+}
+
+.contact-btn.animated-gradient-text {
+  background: linear-gradient(90deg, #3172ff 0%, #6718ce 20%, #8629ff 50%, #3172ff 80%, #6718ce 100%, #8629ff 120%, #3172ff 150%, #3172ff 200%);
+  background-size: 800% 100%;
+  background-repeat: repeat-x;
+  animation: move-gradient 6s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 /* Pseudo-elemento para criar a borda gradiente */
@@ -118,13 +158,16 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, #3172ff, #6718ce, #8629ff, #3172ff); /* O gradiente da borda */
-  border-radius: inherit; /* Herda o border-radius do pai */
-  z-index: -1; /* Coloca o gradiente atrás do conteúdo do botão */
-  padding: 2px; /* Espessura da borda gradiente */
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); /* Máscara para criar o "buraco" */
-  -webkit-mask-composite: xor; /* Combina as máscaras */
-  mask-composite: exclude; /* Para navegadores que não suportam -webkit-mask-composite */
+  background: linear-gradient(90deg, #3172ff 0%, #6718ce 20%, #8629ff 50%, #3172ff 80%, #6718ce 100%, #8629ff 120%, #3172ff 150%, #3172ff 200%);
+  background-size: 800% 100%;
+  background-repeat: repeat-x;
+  animation: move-gradient 6s linear infinite;
+  border-radius: inherit;
+  z-index: -1;
+  padding: 2px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
 /* Efeito de reluzir com blur ao passar o mouse */
@@ -182,7 +225,6 @@ body.dark-mode .contact-btn::after {
   filter: blur(12px);
   opacity: 0.85;
 }
-
 
 /* --- Responsividade Contato --- */
 
