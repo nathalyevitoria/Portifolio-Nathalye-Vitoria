@@ -1,0 +1,286 @@
+/* Estilos exclusivos da página de Contato */
+
+/* Contêiner principal da seção de contato */
+#contact {
+  display: flex;
+  height: 100vh; /* Altura total da viewport */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  overflow: hidden; /* Esconde qualquer conteúdo que transborde */
+  position: relative; /* Necessário para posicionamento absoluto dos círculos */
+}
+
+/* Estilo para o texto "Obrigada!" */
+#contact .thank {
+  font-size: 5em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem; /* Margem inferior consistente */
+  color: #111; /* Preto padrão */
+  -webkit-text-fill-color: #111; /* Garante preto mesmo com gradiente */
+}
+
+/* Contêiner interno para o conteúdo principal */
+#contact .container {
+  display: flex;
+  flex-direction: column; /* Elementos empilhados verticalmente */
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  padding: 50px; /* Preenchimento interno */
+}
+
+/* Estilos para os círculos de desfoque de fundo */
+.blur-circle {
+  position: absolute;
+  transform: translate(-50%, -50%); /* Centraliza o círculo no ponto de origem */
+  border-radius: 50%; /* Torna o elemento um círculo perfeito */
+  filter: blur(100px); /* Aplica um forte desfoque */
+  z-index: -1; /* Garante que fique atrás de outros elementos */
+}
+
+/* Posição e estilo do primeiro círculo */
+.c1 {
+  top: 80%;
+  left: 10%;
+  width: 40rem;
+  height: 40rem;
+  opacity: 0.1;
+  background: radial-gradient(circle at center, #7f5af0, #00c6ff);
+}
+
+/* Posição e estilo do segundo círculo */
+.c2 {
+  top: 20%;
+  left: 80%;
+  width: 60rem;
+  height: 60rem;
+  opacity: 0.1;
+  background: radial-gradient(circle at center, #7f5af0, #8400ff);
+}
+
+/* Estilo para texto com gradiente */
+.text-gradient {
+  background: linear-gradient(90deg, #3172ff, #6718ce, #8629ff, #3172ff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: gradientAnimation 5s linear infinite;
+}
+
+/* Estilo para borda com gradiente */
+/* Esta classe será removida ou ajustada, pois o gradiente da borda será tratado no .contact-btn */
+.text-gradient-border {
+  /* Não é mais necessário para a borda em si, pois o gradiente será tratado no .contact-btn */
+  /* Mantido apenas para compatibilidade se houver outras referências no HTML */
+  border: none; /* Remove a borda original */
+  background: transparent;
+}
+
+/* Contêiner para os botões de contato */
+.contact-buttons {
+  display: flex;
+  flex-direction: row; /* Layout padrão em linha para telas maiores */
+  gap: 32px; /* Espaçamento entre os botões */
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  align-items: center; /* Alinha os botões verticalmente */
+  width: 90%; /* Largura padrão */
+  max-width: 600px; /* Largura máxima */
+  margin: 0 auto; /* Centraliza o contêiner */
+  margin-top: 2rem; /* Margem superior consistente */
+}
+
+/* Estilos base para os botões de contato */
+.contact-btn {
+  font-size: 1.2rem;
+  padding: 20px 40px;
+  border-radius: 40px; /* AQUI é onde o arredondamento é definido */
+  width: max-content; /* Largura baseada no conteúdo */
+  min-width: 180px; /* Largura mínima */
+  max-width: 340px; /* Largura máxima */
+  box-sizing: border-box; /* Inclui padding e border na largura/altura */
+  margin: 0 auto; /* Centraliza o botão se for display: block */
+  display: block; /* Por padrão, age como um bloco para facilitar o empilhamento em telas menores */
+  text-align: center;
+  position: relative; /* Necessário para o pseudo-elemento */
+  z-index: 1; /* Garante que o conteúdo do botão fique acima do pseudo-elemento */
+  background-color: transparent; /* Cor de fundo transparente para o botão */
+  color: #fff; /* Cor do texto padrão para o botão */
+  overflow: hidden; /* Garante que o conteúdo não vaze e respeite o border-radius */
+  transition: border-radius 0.2s, background-color 0.2s; /* Transição suave */
+}
+
+/* Pseudo-elemento para criar a borda gradiente */
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, #3172ff, #6718ce, #8629ff, #3172ff); /* O gradiente da borda */
+  border-radius: inherit; /* Herda o border-radius do pai */
+  z-index: -1; /* Coloca o gradiente atrás do conteúdo do botão */
+  padding: 2px; /* Espessura da borda gradiente */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); /* Máscara para criar o "buraco" */
+  -webkit-mask-composite: xor; /* Combina as máscaras */
+  mask-composite: exclude; /* Para navegadores que não suportam -webkit-mask-composite */
+}
+
+/* Efeito de reluzir com blur ao passar o mouse */
+.contact-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.6) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  filter: blur(8px);
+  opacity: 0.7;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.contact-btn:hover::after,
+.contact-btn:focus::after {
+  animation: shine-move 0.35s linear 1;
+  opacity: 1;
+}
+
+@keyframes shine-move {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+/* Estilo para o texto "Obrigada!" no modo escuro */
+/* Assumindo que uma classe 'dark-mode' é adicionada ao body ou html */
+body.dark-mode #contact .thank {
+  color: #fff !important; /* Cor branca para o modo escuro */
+  -webkit-text-fill-color: #fff !important; /* Garante que o texto preenchido seja branco */
+}
+
+body.dark-mode .contact-btn::after {
+  background: linear-gradient(
+    120deg,
+    rgba(49, 18, 110, 0) 0%, /* Roxo escuro do gradiente, transparente */
+    rgba(134, 41, 255, 0.45) 30%, /* Roxo médio translúcido */
+    rgba(123, 23, 255, 0.45) 50%, /* Um leve branco translúcido para brilho */
+    rgba(134, 41, 255, 0.45) 70%,
+    rgba(49, 18, 110, 0) 100%
+  );
+  filter: blur(12px);
+  opacity: 0.85;
+}
+
+
+/* --- Responsividade Contato --- */
+
+/* Estilos para telas com largura máxima de 854px (tablets e celulares em paisagem) */
+@media (max-width: 854px) {
+  .contact-buttons {
+    flex-direction: column; /* Empilha os botões verticalmente */
+    gap: 20px; /* Espaçamento ajustado */
+    width: 98vw; /* Ocupa quase toda a largura da viewport */
+    max-width: 98vw;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .contact-btn {
+    font-size: 1.15rem; /* Ajuste de fonte */
+    padding: 1.2rem 0; /* Ajuste de preenchimento */
+    min-width: 0; /* Remove largura mínima */
+    max-width: 100%; /* Ocupa 100% da largura do pai */
+    width: 100%; /* Garante largura total */
+    display: block; /* Garante que se empilhem */
+  }
+}
+
+/* Estilos para telas com largura máxima de 480px (celulares em retrato) */
+@media (max-width: 480px) {
+  .contact-buttons {
+    gap: 20px; /* Espaçamento ajustado */
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .contact-btn {
+    font-size: 1rem; /* Ajuste de fonte */
+    padding: 1rem 0; /* Ajuste de preenchimento */
+  }
+  .thank {
+    font-size: 3em; /* Ajuste de tamanho de fonte para telas muito pequenas */
+    color: #111;
+    -webkit-text-fill-color: #111;
+  }
+  body.dark-mode #contact .thank,
+  body.dark-mode .thank {
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+  }
+}
+
+/* Estilos para controle mais refinado em faixas específicas de tela */
+@media (min-width: 481px) and (max-width: 854px) {
+  .contact-btn {
+    min-width: 240px;
+    max-width: 340px;
+    font-size: 1.13rem;
+    padding: 1.15rem 0;
+  }
+}
+
+/* Margens consistentes para outros elementos */
+.contact-title {
+  margin-bottom: 2rem;
+  display: block;
+}
+
+/* Ajustes de margem para telas menores */
+@media (max-width: 768px) {
+  .thank {
+    margin-bottom: 1.2rem;
+    color: #111;
+    -webkit-text-fill-color: #111;
+  }
+  .contact-title {
+    margin-bottom: 1.3rem;
+  }
+  .contact-buttons {
+    margin-top: 1.2rem;
+  }
+  body.dark-mode #contact .thank,
+  body.dark-mode .thank {
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+  }
+}
+
+/* Ajustes de margem para telas muito pequenas */
+@media (max-width: 480px) {
+  .thank {
+    margin-bottom: 0.8rem;
+    color: #111;
+    -webkit-text-fill-color: #111;
+  }
+  .contact-title {
+    margin-bottom: 1rem;
+  }
+  .contact-buttons {
+    margin-top: 0.8rem;
+  }
+  body.dark-mode #contact .thank,
+  body.dark-mode .thank {
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+  }
+}

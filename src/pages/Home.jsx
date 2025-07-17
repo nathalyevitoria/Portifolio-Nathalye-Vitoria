@@ -1,3 +1,5 @@
+import '../styles/home.css';
+
 function Home() {
   return (
     <section className="over-hidden">
@@ -27,20 +29,20 @@ function Home() {
             inovadora, onde possa aplicar minhas habilidades e crescer
             profissionalmente.
           </div>
-          <a
-            className="cv-button"
-            href="/curriculo.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Baixe meu CV
-          </a>
         </div>
         <div className="avatar">
           <div className="card">
             <img className="img" src="/perfil.jpeg" alt="perfil" />
           </div>
         </div>
+        <a
+          className="cv-button"
+          href="/curriculo.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Baixe meu CV
+        </a>
       </div>
     </section>
   );

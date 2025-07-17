@@ -1,0 +1,302 @@
+/* Estilos exclusivos da Home */
+
+section {
+  width: min(1300px, 100%);
+  margin: auto;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.home {
+  padding: 100px 250px 0 250px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.over-hidden {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Ajuste para permitir scroll na Home */
+section, .over-hidden {
+  height: auto !important;
+  min-height: 100vh;
+  overflow-y: auto !important;
+}
+
+.name {
+  font-size: 6.5em;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+span {
+  background-image: linear-gradient(to right, #3172ff, #6718ce, #8629ff, #3172ff);
+  background-size: 200% auto;
+  animation: gradientAnimation 5s linear infinite;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.cv-button {
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #1b1b1b;
+  padding: 20px 30px;
+  border-radius: 40px;
+  margin-top: 30px;
+  display: block;
+  width: max-content;
+}
+
+/* Efeito de reluzir com blur ao passar o mouse no botão CV */
+.cv-button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cv-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.6) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  filter: blur(8px);
+  opacity: 0.7;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.cv-button:hover::after,
+.cv-button:focus::after {
+  animation: shine-move-cv 0.35s linear 1;
+  opacity: 1;
+}
+
+@keyframes shine-move-cv {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+body.dark-mode .cv-button::after {
+  background: linear-gradient(
+    120deg,
+    rgba(49, 18, 110, 0) 0%,
+    rgba(134, 41, 255, 0.45) 30%,
+    rgba(123, 23, 255, 0.45) 50%,
+    rgba(134, 41, 255, 0.45) 70%,
+    rgba(49, 18, 110, 0) 100%
+  );
+  filter: blur(12px);
+  opacity: 0.85;
+}
+
+.des {
+  margin: 30px 0;
+  border-left: .7em solid #3172ff;
+  padding-left: 2em;
+}
+
+.avatar {
+  text-align: right;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.card {
+  display: inline-flex;
+  flex-direction: column;
+  width: min(100%, 400px);
+  box-shadow: 0 150px 150px #9a45e933;
+  transition: 0.5s;
+}
+.card:hover {
+  box-shadow: 0 150px 150px #4587e955;
+}
+
+.img {
+  width: 100%;
+  height: min(900px, 60vh);
+  object-fit: cover;
+  object-position: top;
+  clip-path: polygon(81% 0, 100% 18%, 100% 100%, 0 100%, 0 0);
+}
+
+@media (max-width: 1330px - 1025px) {
+  .cv-button {
+    display: inline-block;
+    margin: 20px auto 0 auto;
+    width: auto;
+    text-align: center;
+  }
+}
+
+/* Responsividade Home */
+@media (max-width: 1330px) {
+  .home {
+    padding: 80px 40px 0 40px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  .avatar {
+    text-align: center;
+  }
+  .cv-button {
+    display: inline-block;
+    margin: 20px auto 0 auto;
+    width: auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 854px) {
+  .home {
+    padding: 60px 16px 0 16px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .name {
+    font-size: 2.5em;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 8px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .des {
+    border-left: none;
+    padding-left: 0;
+    margin: 20px 0;
+    text-align: center;
+  }
+  .avatar {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .card {
+    width: 80vw;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .cv-button {
+    display: inline-block;
+    margin: 20px auto 0 auto;
+    width: auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 40px 4px 0 4px;
+    gap: 12px;
+  }
+  .name {
+    font-size: 1.5em;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .content {
+    padding: 0 2px;
+  }
+  .des {
+    font-size: 1em;
+    margin: 10px 0;
+  }
+  .avatar {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .card {
+    width: 90vw;
+    max-width: 220px;
+  }
+  .cv-button {
+    display: block;
+    width: 100%;
+    margin: 12px auto 0 auto;
+    text-align: center;
+    font-size: 1em;
+    padding: 12px 0;
+  }
+}
+
+/* Ajuste para alinhar botão ao lado da imagem em mobile padrão, e abaixo em telas muito pequenas */
+@media (max-width: 854px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .avatar {
+    order: 2;
+  }
+  .cv-button {
+    order: 3;
+    margin-top: 16px;
+    align-self: center;
+    width: auto;
+    display: block;
+  }
+}
+@media (max-width: 480px) {
+  .home {
+    flex-direction: column;
+  }
+  .avatar, .cv-button {
+    width: 100%;
+    text-align: center;
+  }
+  .cv-button {
+    margin-top: 8px;
+    width: 100%;
+  }
+  .cv-button {
+    margin-top: 12px;
+    width: 100%;
+    align-self: center;
+    display: block;
+  }
+} 
