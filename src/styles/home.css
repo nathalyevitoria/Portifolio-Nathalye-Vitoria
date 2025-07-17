@@ -253,8 +253,10 @@ body.dark-mode .cv-button::after {
     width: 100%;
     height: auto;
     max-width: 220px;
+    max-height: 220px;
     display: block;
     margin: 0 auto;
+    object-fit: cover;
   }
   .cv-button {
     display: block;
