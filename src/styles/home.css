@@ -118,6 +118,10 @@ body.dark-mode .cv-button::after {
   text-align: justify;
 }
 
+.des p {
+  text-indent: 2em;
+}
+
 .avatar {
   text-align: right;
   animation: float 3s ease-in-out infinite;
