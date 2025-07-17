@@ -10,24 +10,26 @@
   padding-top: 5rem;
 }
 
+/* Cards menores e mais espaçamento entre janela e cards */
 #project .list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  padding: 50px;
+  gap: 40px; /* restaurado para 40px */
+  padding: 70px; /* restaurado para 70px */
 }
 
 #project .list .item img {
   width: 100%;
-  height: 200px;
+  height: 160px; /* diminuído de 200px para 160px */
   object-fit: cover;
 }
 
 #project .list .item {
-  border-radius: 30px;
+  border-radius: 24px; /* levemente reduzido para acompanhar o card menor */
   background-color: #ffffff;
   overflow: hidden;
   position: relative;
+  padding-bottom: 10px; /* leve respiro extra na base */
 }
 
 #project .list .item:hover {
@@ -115,6 +117,14 @@
   border-radius: 8px;
 }
 
+.container-project {
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px 0 32px; /* restaurado para 32px */
+  box-sizing: border-box;
+}
+
 /* Responsividade Projetos */
 @media (max-width: 1024px) {
   #project {
@@ -128,6 +138,13 @@
     width: 100%;
     height: 22rem;
   }
+  .container-project {
+    padding: 0 32px 0 32px;
+  }
+  #project .list {
+    gap: 44px;
+    padding: 44px 0;
+  }
 }
 
 @media (max-width: 854px) {
@@ -138,7 +155,7 @@
   .container-project {
     width: 100vw;
     max-width: 100vw;
-    padding: 0 8px;
+    padding: 0 24px;
     box-sizing: border-box;
   }
   .project-container {
@@ -146,11 +163,11 @@
   }
   #project .list {
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px 0;
+    gap: 36px; /* aumentado de 28px para 36px */
+    padding: 36px 0;
   }
   #project .list .item img {
-    height: 180px;
+    height: 140px; /* menor para telas pequenas */
   }
   #project .list .item .text {
     font-size: 1.1em;
@@ -170,7 +187,6 @@
   .container-project {
     width: 100vw;
     max-width: 100vw;
-    padding: 0 2px;
     box-sizing: border-box;
   }
   .project-container {
@@ -181,7 +197,11 @@
     height: 10rem;
   }
   #project .list .item img {
-    height: 120px;
+    height: 100px; /* menor para mobile */
+  }
+  #project .list {
+    gap: 28px; /* aumentado de 20px para 28px */
+    padding: 24px 0;
   }
   #project .list .item .text {
     font-size: 1.2em;
@@ -190,5 +210,13 @@
   #project .list .name {
     text-align: center;
     font-size: 1.1em;
+  }
+}
+
+@media (max-width: 1230px) and (min-width: 856px) {
+  #project .list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+    padding: 36px 0;
   }
 } 
