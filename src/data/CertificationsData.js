@@ -14,30 +14,19 @@ export const certifications = [
   },
 
   {
-    id: "mecatronica"
-    name: "Técnico em Mecatrônica - IFSP GRU"
+    id: "mecatronica",
+    name: "Técnico em Mecatrônica - IFSP GRU",
     description:
       `Certificação obtida após conclusão do curso de Mecatrônica, abordando fundamentos de circuitos, componentes e montagem prática.`,
     image: "/certifications/post1/fonte1.jpeg",
     media: [
       { type: "image", src: "/certifications/post1/fonte1.jpeg" },
       { type: "image", src: "/certifications/post1/fonte1.jpeg" }
-
+    ],
     institution: "IFSP",
     year: 2023
-    ]
-
-
-
-      }
-
-
-
-    ],
-  
-    
-    
   }
+
 
 
   // ADICIONE ACIMA DESSE ULTIMO BRACKET, NÃO INSIRA NADA ABAIXO DESSE COMENTÁRIO AQUI!!!!
