@@ -1,8 +1,20 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const location = useLocation();
+
+  // Mapeamento de path para nome amigável
+  const pageNames = {
+    '/': 'Home',
+    '/projects': 'Projetos',
+    '/certifications': 'Certificados',
+    '/contact': 'Contato',
+  };
+
+  // Nome da página atual
+  const currentPageName = pageNames[location.pathname] || '';
 
   // Fecha o sidebar ao clicar no overlay
   const handleOverlayClick = (e) => {
@@ -15,11 +27,25 @@ function Navbar() {
     <header>
       <nav className="navbar-nav">
         <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/projects">Projetos</Link>
-          <Link to="/certifications">Certificados</Link>
-          <Link to="/contact">Contato</Link>
+          <Link to="/">
+            Home
+            <span className="nav-underline"></span>
+          </Link>
+          <Link to="/projects">
+            Projetos
+            <span className="nav-underline"></span>
+          </Link>
+          <Link to="/certifications">
+            Certificados
+            <span className="nav-underline"></span>
+          </Link>
+          <Link to="/contact">
+            Contato
+            <span className="nav-underline"></span>
+          </Link>
         </div>
+        {/* Nome da página centralizado */}
+        <div className="navbar-title">{currentPageName}</div>
         <button
           className={`hamburger${sidebarOpen ? ' hidden' : ''}`}
           aria-label="Abrir menu"

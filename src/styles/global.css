@@ -105,6 +105,59 @@ body.dark-mode img {
   gap: 30px;
   justify-content: center;
   flex: 1;
+  font-weight: bold;
+  position: relative;
+}
+
+.nav-links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.nav-underline {
+  display: block;
+  height: 3px;
+  width: 100%;
+  margin-top: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #3172ff 0%, #6718ce 20%, #8629ff 50%, #3172ff 80%, #6718ce 100%, #8629ff 120%, #3172ff 150%, #3172ff 200%);
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  animation: move-gradient 4s linear infinite;
+}
+
+.nav-links a:nth-child(1) .nav-underline {
+  background-position: 0% 0%;
+  background-size: 400% 100%;
+}
+.nav-links a:nth-child(2) .nav-underline {
+  background-position: 33.33% 0%;
+  background-size: 400% 100%;
+}
+.nav-links a:nth-child(3) .nav-underline {
+  background-position: 66.66% 0%;
+  background-size: 400% 100%;
+}
+.nav-links a:nth-child(4) .nav-underline {
+  background-position: 100% 0%;
+  background-size: 400% 100%;
+}
+
+@keyframes move-gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+@media (max-width: 854px) {
+  .nav-underline {
+    display: none;
+  }
 }
 
 .hamburger {
@@ -129,6 +182,31 @@ body.dark-mode img {
   margin: 4px 0;
   border-radius: 2px;
   transition: 0.3s;
+}
+
+.navbar-title {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  font-weight: bold;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+@media (max-width: 854px) {
+  .navbar-title {
+    display: block;
+    font-size: 1rem;
+    max-width: 70vw;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 /* Sidebar overlay */
