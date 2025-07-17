@@ -17,6 +17,7 @@ function Navbar() {
         <div className="nav-links">
           <Link to="/">Home</Link>
           <Link to="/projects">Projetos</Link>
+          <Link to="/certifications">Certificados</Link>
           <Link to="/contact">Contato</Link>
         </div>
         <button
@@ -43,6 +44,8 @@ function Navbar() {
             <Link to="/" onClick={() => setSidebarOpen(false)}>Home</Link>
             <div className="sidebar-separator"></div>
             <Link to="/projects" onClick={() => setSidebarOpen(false)}>Projetos</Link>
+            <div className="sidebar-separator"></div>
+            <Link to="/certifications" onClick={() => setSidebarOpen(false)}>Certificados</Link>
             <div className="sidebar-separator"></div>
             <Link to="/contact" onClick={() => setSidebarOpen(false)}>Contato</Link>
           </aside>
