@@ -3,8 +3,12 @@ import '../styles/contact.css';
 function Contact() {
   return (
     <div id="contact">      
-      <div class="blur-circle c1"></div>
-      <div class="blur-circle c2"></div>
+      <div className="blur-orbit orbit1">
+        <div className="blur-circle c1"></div>
+      </div>
+      <div className="blur-orbit orbit2">
+        <div className="blur-circle c2"></div>
+      </div>
       <div className="container">
         <div className="thank text-gradient">Obrigada!</div>
         <h2>Contato</h2>

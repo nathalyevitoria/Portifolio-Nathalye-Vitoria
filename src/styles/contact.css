@@ -33,8 +33,9 @@
   position: absolute;
   transform: translate(-50%, -50%); /* Centraliza o círculo no ponto de origem */
   border-radius: 50%; /* Torna o elemento um círculo perfeito */
-  filter: blur(100px); /* Aplica um forte desfoque */
+  filter: blur(15px); /* Blur ainda maior para suavizar ao máximo */
   z-index: -1; /* Garante que fique atrás de outros elementos */
+  opacity: 0.04; /* Opacidade bem baixa para quase eliminar o ruído */
 }
 
 /* Posição e estilo do primeiro círculo */
@@ -325,4 +326,61 @@ body.dark-mode .contact-btn::after {
     color: #fff !important;
     -webkit-text-fill-color: #fff !important;
   }
+}
+
+@keyframes move-circular-c1 {
+  0%   { top: calc(80% + 0rem); left: calc(10% + 0rem);}
+  25%  { top: calc(80% + 10rem); left: calc(10% + 10rem);}
+  50%  { top: calc(80% + 0rem); left: calc(10% + 20rem);}
+  75%  { top: calc(80% - 10rem); left: calc(10% + 10rem);}
+  100% { top: calc(80% + 0rem); left: calc(10% + 0rem);}
+}
+
+@keyframes move-circular-c2 {
+  0%   { top: calc(20% + 0rem); left: calc(80% + 0rem);}
+  25%  { top: calc(20% - 12rem); left: calc(80% + 12rem);}
+  50%  { top: calc(20% + 0rem); left: calc(80% + 24rem);}
+  75%  { top: calc(20% + 12rem); left: calc(80% + 12rem);}
+  100% { top: calc(20% + 0rem); left: calc(80% + 0rem);}
+}
+
+.c1 {
+  animation: move-circular-c1 16s linear infinite;
+}
+
+.c2 {
+  animation: move-circular-c2 22s linear infinite;
+}
+
+/* --- Órbita circular dos círculos de blur --- */
+.blur-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.blur-orbit .blur-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.orbit1, .orbit2 {
+  width: 0;
+  height: 0;
+  animation: orbit-c 20s linear infinite;
+}
+
+.orbit1 .c1 {
+  transform: translate(-50%, -50%) translateX(220px);
+}
+
+.orbit2 .c2 {
+  transform: translate(-50%, -50%) rotate(180deg) translateX(220px);
+}
+
+@keyframes orbit-c {
+  100% { transform: rotate(360deg); }
 }
