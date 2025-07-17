@@ -5,7 +5,6 @@ import '../styles/projects.css';
 function Projects() {
   return (
     <div id="project">
-      <div class="blur-circle c1"></div>
       <div className="container-project">
         <div className="list">
           {projects.map((project, index) => (
