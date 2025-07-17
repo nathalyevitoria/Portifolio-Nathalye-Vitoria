@@ -4,12 +4,12 @@ export const projects = [
     name: "Relógio Digital – Projeto de Eletrônica Digital (SENAI)",
     description:
       "Este relógio digital foi desenvolvido como parte da disciplina de Eletrônica Digital no curso de Aprendizagem Industrial de Eletricista de Manutenção Eletroeletrônica do SENAI. O projeto teve como objetivo aplicar os conhecimentos teóricos na prática, utilizando circuitos lógicos, displays de 7 segmentos e contadores digitais para mostrar as horas de forma precisa. Com uma montagem funcional e visual limpa, o relógio demonstra o domínio de conceitos como temporização, decodificação e controle de sinais, sendo um exemplo prático de automação e eletrônica aplicada.",
-    image: "relogio-capa.jpeg",
+    image: "projects/post1/relogio-capa.jpeg",
     media: [
-      { type: "image", src: "/relogio1.jpeg" },
-      { type: "image", src: "/relogio2.jpeg" },
-      { type: "image", src: "/relogio3.jpeg" },
-      { type: "video", src: "/relogio-vd.mp4" },
+      { type: "image", src: "/projects/post1/relogio1.jpeg" },
+      { type: "image", src: "/projects/post1/relogio2.jpeg" },
+      { type: "image", src: "/projects/post1/relogio3.jpeg" },
+      { type: "video", src: "/projects/post1/relogio-vd.mp4" },
     ],
   },
   {
@@ -25,16 +25,16 @@ export const projects = [
     ✅ Aplicação prática de normas NR10 e NR12
     ✅Dispositivos de proteção 
     ✅Testes de isolação com megômetro`,
-    image: "/painel1.jpeg",
+    image: "/projects/post2/painel1.jpeg",
     media: [
-      { type: "image", src: "/painel1.jpeg" },
-      { type: "image", src: "/painel2.jpeg" },
-      { type: "image", src: "/painel3.jpeg" },
-      { type: "image", src: "/painel4.jpeg" },
-      { type: "image", src: "/painel5.jpeg" },
-      { type: "image", src: "/painel6.jpeg" },
-      { type: "image", src: "/painel7.jpeg" },
-      { type: "video", src: "/painel-vd.mp4" },
+      { type: "image", src: "/projects/post2/painel1.jpeg" },
+      { type: "image", src: "/projects/post2/painel2.jpeg" },
+      { type: "image", src: "/projects/post2/painel3.jpeg" },
+      { type: "image", src: "/projects/post2/painel4.jpeg" },
+      { type: "image", src: "/projects/post2/painel5.jpeg" },
+      { type: "image", src: "/projects/post2/painel6.jpeg" },
+      { type: "image", src: "/projects/post2/painel7.jpeg" },
+      { type: "video", src: "/projects/post2/painel-vd.mp4" },
     ],
   },
   {
@@ -59,12 +59,12 @@ export const projects = [
     Proteção térmica e contra curto-circuito
 
     Indicador visual de operação (LED)`,
-    image: "/fonte1.jpeg",
+    image: "/projects/post3/fonte1.jpeg",
     media: [
-      { type: "image", src: "/fonte1.jpeg" },
-      { type: "image", src: "/fonte2.jpeg" },
-      { type: "image", src: "/fonte3.jpeg" },
-      { type: "image", src: "/fonte4.jpeg" },
+      { type: "image", src: "/projects/post3/fonte1.jpeg" },
+      { type: "image", src: "/projects/post3/fonte2.jpeg" },
+      { type: "image", src: "/projects/post3/fonte3.jpeg" },
+      { type: "image", src: "/projects/post3/fonte4.jpeg" },
     ],
   },
 
@@ -92,12 +92,12 @@ export const projects = [
     Proteção térmica e contra curto-circuito
 
     Indicador visual de operação (LED)`,
-    image: "/bat.jpeg",
+    image: "/projects/post4/bat.jpeg",
     media: [
-      { type: "image", src: "/bat.jpeg" },
-      { type: "image", src: "/bat.jpeg" },
-      { type: "image", src: "/bat.jpeg" },
-      { type: "image", src: "/bat.jpeg" },
+      { type: "image", src: "/projects/post4/bat.jpeg" },
+      { type: "image", src: "/projects/post4/bat.jpeg" },
+      { type: "image", src: "/projects/post4/bat.jpeg" },
+      { type: "image", src: "/projects/post4/bat.jpeg" },
     ],
   }
 
@@ -124,16 +124,18 @@ export const projects = [
 
   //   Teste parágrafo 7`,
   //   // Imagem principal que vai ser exibida no card
-  //   image: "/nuvem.jpg",
+  //   Crie uma pasta dentro da pasta public/projects para seu novo post
+  //    O caminho do projeto deve conter : "/projects/postX/" -- Substitua o "X" pelo numero correto
+  //   image: "/projects/postX/exemplo.jpg",
   //   // Imagens que vão ser exibidas no carrossel
   //   media: [
   //     // Primeira Imagem do carrossel 
-  //     { type: "image", src: "/nuvem.jpeg" },
+  //     { type: "image", src: "/projects/postX/exemplo.jpeg" },
   //     // Segunda Imagem do carrossel 
-  //     { type: "image", src: "/nuvem.jpeg" },
+  //     { type: "image", src: "/projects/postX/exemplo.jpeg" },
   //     // Terceira Imagem do carrossel 
-  //     { type: "image", src: "/nuvem.jpeg" },
+  //     { type: "image", src: "/projects/postX/exemplo.jpeg" },
   //     // Quarta Imagem do carrossel 
-  //     { type: "image", src: "/nuvem.jpeg" },
+  //     { type: "image", src: "/projects/postX/exemplo.jpeg" },
   //   ],
   // },
