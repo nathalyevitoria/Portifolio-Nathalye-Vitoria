@@ -13,7 +13,6 @@ function CertificationDetails() {
 
   return (
     <div className="certification-container">
-      <div className="blur-circle c1"></div>
       <div className="carousel">
         <Swiper
           navigation
