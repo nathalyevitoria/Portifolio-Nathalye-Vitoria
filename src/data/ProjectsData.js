@@ -101,6 +101,8 @@ export const projects = [
     ],
   }
 
+  
+  // ADICIONE ACIMA DESSE ULTIMO BRACKET, NÃI INSIRA NADA ABAIXO DESSE COMENTÁRIO AQUI!!!!
 ];
 
 // // {
