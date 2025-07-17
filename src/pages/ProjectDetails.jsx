@@ -14,7 +14,6 @@ function ProjectDetail() {
 
   return (
     <div className="project-container">
-      <div class="blur-circle c1"></div>
       <div className="carousel">
         <Swiper
           navigation

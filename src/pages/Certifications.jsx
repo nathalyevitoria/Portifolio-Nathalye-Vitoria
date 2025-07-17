@@ -5,7 +5,6 @@ import '../styles/certifications.css';
 function Certifications() {
   return (
     <div id="certification">
-      <div className="blur-circle c1"></div>
       <div className="container-certification">
         <div className="list">
           {certifications.map((cert, index) => (
