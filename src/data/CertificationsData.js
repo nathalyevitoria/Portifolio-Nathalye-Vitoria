@@ -4,13 +4,14 @@ export const certifications = [
     name: "Eletrônica Básica – SENAI",
     description:
       `Certificação obtida após conclusão do curso de Eletrônica Básica no SENAI, abordando fundamentos de circuitos, componentes e montagem prática.`,
-    image: "/certifications/post1/fonte1.jpeg",
+    image: "/certifications/post1/certificate-sample.jpg",
     media: [
-      { type: "image", src: "/certifications/post1/fonte1.jpeg" },
-      { type: "image", src: "/certifications/post1/fonte1.jpeg" }
+      { type: "image", src: "/certifications/post1/certificate-sample.jpg" },
+      { type: "image", src: "/certifications/post1/certificate-sample.jpg" }
     ],
     institution: "SENAI",
-    year: 2022
+    year: 2022,
+    linkedProjects: ["relogio"]
   },
 
   {
@@ -18,34 +19,33 @@ export const certifications = [
     name: "Técnico em Mecatrônica - IFSP GRU",
     description:
       `Certificação obtida após conclusão do curso de Mecatrônica, abordando fundamentos de circuitos, componentes e montagem prática.`,
-    image: "/certifications/post1/fonte1.jpeg",
+    image: "/certifications/post1/certificate-sample.jpg",
     media: [
-      { type: "image", src: "/certifications/post1/fonte1.jpeg" },
-      { type: "image", src: "/certifications/post1/fonte1.jpeg" }
+      { type: "image", src: "/certifications/post1/certificate-sample.jpg" },
+      { type: "image", src: "/certifications/post1/certificate-sample.jpg" }
     ],
     institution: "IFSP",
-    year: 2023
+    year: 2023,
+    linkedProjects: ["painel"]
   },
 
   {
     id: "developer",
     name: "Desenvolvedora - Lucas Leria Institution",
     description:
-      `Certificação obtida após conclusão do curso de Desenvolvimento, abordando fundamentos de progração para web e todas as suas dificulades.`,
-    image: "/certifications/post3/fonte1.jpeg",
+      `Certificação obtida após conclusão do curso de Desenvolvimento, abordando fundamentos de programação para web e todas as suas dificulades.`,
+    image: "/certifications/post3/certificate-sample.jpg",
     media: [
-      { type: "image", src: "/certifications/post3/fonte1.jpeg" },
-      { type: "image", src: "/certifications/post3/fonte1.jpeg" }
+      { type: "image", src: "/certifications/post3/certificate-sample.jpg" },
+      { type: "image", src: "/certifications/post3/certificate-sample.jpg" }
     ],
     institution: "Lucas Leria Intitucion",
-    year: 2025
+    year: 2025,
+    linkedProjects: ["fonte", "batman"]
   }
-
-
 
   // ADICIONE ACIMA DESSE ULTIMO BRACKET, NÃO INSIRA NADA ABAIXO DESSE COMENTÁRIO AQUI!!!!
 ];
-
 
 // Exemplo de template para novo certificado:
   /*
@@ -71,6 +71,7 @@ export const certifications = [
     // Nome da instituição emissora
     institution: "Nome da Instituição",
     // Ano de conclusão/emissão
-    year: 2024
+    year: 2024,
+    linkedProjects: []
   },
   */

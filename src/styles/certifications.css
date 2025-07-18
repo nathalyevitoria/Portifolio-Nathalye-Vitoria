@@ -83,6 +83,17 @@
   align-items: center;
 }
 
+.certification-image {
+
+  width: 60rem;
+  height: 35rem;
+  margin: 0 auto 60px auto;
+    overflow: hidden;
+    position: relative;
+    background-color: #131313;
+    backdrop-filter: blur(10px);
+}
+
 .certification-title {
   font-size: 1.875rem;
   font-weight: bold;
@@ -128,6 +139,108 @@
   margin: 0 auto;
   padding: 0 32px 0 32px;
   box-sizing: border-box;
+}
+
+/* --- NOVO LAYOUT CERTIFICATION DETAILS --- */
+.certification-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 100%;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+.certification-image {
+  width: 70%;
+  max-width: 700px;
+  height: 35rem;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.certification-panel {
+  width: 30%;
+  min-width: 220px;
+  /* background: #f7f7ff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06); */
+  padding: 2rem 1.5rem 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+.certification-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.certification-meta {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.certification-button {
+  margin-top: auto;
+  padding: 0.75rem 2.5rem;
+  background: #4b7bec;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: block;
+}
+.certification-button:hover {
+  background: #3867d6;
+}
+.certification-description {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  white-space: pre-line;
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  .certification-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .certification-image, .carousel {
+    width: 100%;
+    max-width: 100%;
+    height: 22rem;
+  }
+  .certification-panel {
+    width: 100%;
+    min-width: unset;
+    padding: 1.5rem 1rem 2rem 1rem;
+    margin-top: 0;
+  }
+}
+@media (max-width: 600px) {
+  .certification-image, .carousel {
+    height: 10rem;
+  }
+  .certification-panel {
+    padding: 1rem 0.5rem 1.5rem 0.5rem;
+  }
+  .certification-title {
+    font-size: 1.1rem;
+  }
+  .certification-meta {
+    font-size: 1em;
+  }
+  .certification-button {
+    font-size: 1em;
+    padding: 0.5rem 1.5rem;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -222,5 +335,161 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 36px;
     padding: 36px 0;
+  }
+}
+
+/* --- MODAL DE DETALHES DA CERTIFICACAO --- */
+.certification-details-modal {
+  max-width: 100%;
+  margin: 100px 0 0 0;
+  padding: 0 10rem 0 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.certification-carousel-modal {
+  width: 100%;
+  max-width: 600px;
+  height: 22rem;
+  margin-bottom: 2.5rem;
+  background: #131313;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.certification-title-modal {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.certification-description-modal {
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  font-size: 1.1em;
+  text-align: left;
+  white-space: pre-line;
+  color: #444b57;
+}
+.certification-back-button {
+  padding: 0.75rem 2.5rem;
+  background: #4b7bec;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 1.5rem;
+  display: block;
+}
+.certification-back-button:hover {
+  background: #3867d6;
+}
+@media (max-width: 700px) {
+  .certification-carousel-modal {
+    max-width: 100vw;
+    height: 12rem;
+  }
+  .certification-title-modal {
+    font-size: 1.2rem;
+  }
+  .certification-description-modal {
+    font-size: 1em;
+    max-width: 100vw;
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Gradiente animado para texto e borda com loop perfeito */
+.certification-image::before {
+  background: linear-gradient(90deg,
+    #3172ff 0%, #6718ce 16%, #8629ff 33%, #3172ff 50%, #6718ce 66%, #8629ff 83%, #3172ff 100%
+  );
+  background-size: 300% 100%;
+  background-repeat: repeat-x;
+  animation: move-gradient 8s linear infinite;
+}
+
+/* --- GRADIENTE ANIMADO NA BORDA DO CERTIFICADO (ANIMAÇÃO REAL) --- */
+.certification-image-gradient {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  border-radius: 24px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.certification-image-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  z-index: 0;
+  background: linear-gradient(90deg,
+    #3172ff 0%, #6718ce 16%, #8629ff 33%, #3172ff 50%, #6718ce 66%, #8629ff 83%, #3172ff 100%, #3172ff 100%
+  );
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  animation: move-gradient 2s linear infinite;
+  pointer-events: none;
+}
+.certification-image-inner {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  margin: 12px; /* Espessura da borda */
+  z-index: 1;
+  width: calc(100% - 24px);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.certification-image-inner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #fff;
+  box-shadow: none;
+}
+@keyframes move-gradient {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
+}
+@media (max-width: 1024px) {
+  .certification-image-gradient {
+    max-width: 100vw;
+    margin-bottom: 1.5rem;
+  }
+  .certification-image-inner {
+    border-radius: 12px;
+    margin: 6px;
+    width: calc(100% - 12px);
+  }
+  .certification-image-inner img {
+    border-radius: 6px;
+  }
+}
+@media (max-width: 600px) {
+  .certification-image-gradient {
+    max-width: 100vw;
+    margin-bottom: 1rem;
+  }
+  .certification-image-inner {
+    border-radius: 8px;
+    margin: 3px;
+    width: calc(100% - 6px);
+  }
+  .certification-image-inner img {
+    border-radius: 4px;
   }
 }

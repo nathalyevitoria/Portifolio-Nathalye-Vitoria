@@ -11,6 +11,7 @@ export const projects = [
       { type: "image", src: "/projects/post1/relogio3.jpeg" },
       { type: "video", src: "/projects/post1/relogio-vd.mp4" },
     ],
+    linkedCertifications: ["eletronica_basica"]
   },
   {
     id: "painel",
@@ -36,6 +37,7 @@ export const projects = [
       { type: "image", src: "/projects/post2/painel7.jpeg" },
       { type: "video", src: "/projects/post2/painel-vd.mp4" },
     ],
+    linkedCertifications: ["mecatronica"]
   },
   {
     id: "fonte",
@@ -66,11 +68,9 @@ export const projects = [
       { type: "image", src: "/projects/post3/fonte3.jpeg" },
       { type: "image", src: "/projects/post3/fonte4.jpeg" },
     ],
+    linkedCertifications: ["developer"]
   },
-
-  { // id sempre com letras minusculas e sem numeros no começo
-    // craze para textos com formatação em paragrafos
-
+  {
     id: "batman",
     name: "BATMAN Usinado Em  Uma Frezadora CNC - MILLING MACHiNE",
     description: `Esta fonte linear foi desenvolvida para fornecer uma tensão de +5V DC estabilizada, adequada para alimentar circuitos digitais, microcontroladores e demais dispositivos que operam em baixa tensão.
@@ -99,10 +99,10 @@ export const projects = [
       { type: "image", src: "/projects/post4/bat.jpeg" },
       { type: "image", src: "/projects/post4/bat.jpeg" },
     ],
+    linkedCertifications: ["developer"]
   }
 
-  
-  // ADICIONE ACIMA DESSE ULTIMO BRACKET, NÃI INSIRA NADA ABAIXO DESSE COMENTÁRIO AQUI!!!!
+  // ADICIONE ACIMA DESSE ULTIMO BRACKET, NÃO INSIRA NADA ABAIXO DESSE COMENTÁRIO AQUI!!!!
 ];
 
 // // {
