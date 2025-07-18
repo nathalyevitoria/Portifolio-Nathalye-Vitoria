@@ -25,6 +25,20 @@ export const certifications = [
     ],
     institution: "IFSP",
     year: 2023
+  },
+
+  {
+    id: "developer",
+    name: "Desenvolvedora - Lucas Leria Institution",
+    description:
+      `Certificação obtida após conclusão do curso de Desenvolvimento, abordando fundamentos de progração para web e todas as suas dificulades.`,
+    image: "/certifications/post3/fonte1.jpeg",
+    media: [
+      { type: "image", src: "/certifications/post3/fonte1.jpeg" },
+      { type: "image", src: "/certifications/post3/fonte1.jpeg" }
+    ],
+    institution: "Lucas Leria Intitucion",
+    year: 2025
   }
 
 
