@@ -15,7 +15,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px; /* restaurado para 40px */
-  padding: 70px; /* restaurado para 70px */
 }
 
 #project .list .item img {
