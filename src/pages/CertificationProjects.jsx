@@ -24,19 +24,9 @@ function CertificationProjects() {
           <div style={{width: '100%', display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'center'}}>
             <h3 style={{marginBottom: '1rem'}}>Projetos Relacionados:</h3>
             {relatedProjects.map(proj => (
-              <div key={proj.id} style={{
-                display: 'flex',
-                alignItems: 'center',
-                background: '#f7f7ff',
-                borderRadius: 16,
-                boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-                padding: '1.5rem',
-                maxWidth: 600,
-                width: '100%',
-                gap: '2rem',
-              }}>
-                <img src={proj.image} alt={proj.name} style={{width: 120, height: 80, objectFit: 'cover', borderRadius: 8}} />
-                <div style={{flex: 1}}>
+              <div key={proj.id} className="certification-project-card">
+                <img src={proj.image} alt={proj.name} />
+                <div className="project-info">
                   <h4 style={{margin: 0, fontSize: '1.2rem'}}>{proj.name}</h4>
                   <p style={{margin: '0.5rem 0 1rem 0', fontSize: '0.98em', color: '#444'}}>{proj.description.slice(0, 120)}...</p>
                   <button className="certification-button" onClick={() => {
