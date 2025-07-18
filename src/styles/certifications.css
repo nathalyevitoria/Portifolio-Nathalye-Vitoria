@@ -243,6 +243,12 @@
   }
 }
 
+@media (min-width: 1025px) {
+  .container-certification > .certification-content.reverse {
+    flex-direction: row-reverse !important;
+  }
+}
+
 @media (max-width: 1024px) {
   #certification {
     padding-top: 70px;
@@ -328,6 +334,15 @@
     text-align: center;
     font-size: 1.1em;
   }
+  .certification-details-modal {
+    padding-top: 70px;
+  }
+  .certification-container {
+    padding-top: 70px;
+  }
+  .certification-image-gradient {
+    margin-top: 70px;
+  }
 }
 
 @media (max-width: 1230px) and (min-width: 856px) {
@@ -341,7 +356,6 @@
 /* --- MODAL DE DETALHES DA CERTIFICACAO --- */
 .certification-details-modal {
   max-width: 100%;
-  margin: 100px 0 0 0;
   padding: 0 10rem 0 10rem;
   display: flex;
   flex-direction: column;
@@ -384,6 +398,7 @@
   transition: background 0.2s;
   margin-top: 1.5rem;
   display: block;
+  margin-bottom: 2.5rem;
 }
 .certification-back-button:hover {
   background: #3867d6;
@@ -399,6 +414,9 @@
   .certification-description-modal {
     font-size: 1em;
     max-width: 100vw;
+  }
+  .certification-details-modal {
+    padding: 60px 24px 0 24px;
   }
 }
 @keyframes fadeIn {
@@ -518,7 +536,10 @@
 }
 @media (max-width: 700px) {
   .certification-details-modal {
-    padding: 0 0.5rem;
+    padding-top: 0;
+  }
+  .certification-container {
+    padding-top: 0;
   }
   .certification-project-card {
     flex-direction: column;
@@ -540,4 +561,38 @@
     margin: 0.5rem auto 0 auto;
     width: fit-content;
   }
+}
+
+/* Projetos relacionados - CertificationProjects.jsx */
+.certification-no-projects {
+  text-align: center;
+  color: #888;
+}
+.certification-projects-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.certification-projects-title {
+  margin-bottom: 1rem;
+}
+.certification-project-name {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.certification-project-desc {
+  margin: 0.5rem 0 1rem 0;
+  font-size: 0.98em;
+  color: #444;
+}
+
+/* Botão relacionado a certificado - ProjectDetails.jsx */
+.related-cert-btn {
+  /* Mantém responsividade já existente, mas pode ser customizado aqui se necessário */
+}
+
+body.dark-mode .certification-title {
+  color: #fff;
 }

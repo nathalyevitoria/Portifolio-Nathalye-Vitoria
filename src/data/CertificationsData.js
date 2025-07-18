@@ -42,6 +42,21 @@ export const certifications = [
     institution: "Lucas Leria Intitucion",
     year: 2025,
     linkedProjects: ["fonte", "batman"]
+  },
+
+  {
+    id: "eletronica_basica",
+    name: "Eletrônica Básica – SENAI",
+    description:
+      `Certificação obtida após conclusão do curso de Eletrônica Básica no SENAI, abordando fundamentos de circuitos, componentes e montagem prática.`,
+    image: "/certifications/post1/certificate-sample.jpg",
+    media: [
+      { type: "image", src: "/certifications/post1/certificate-sample.jpg" },
+      { type: "image", src: "/certifications/post1/certificate-sample.jpg" }
+    ],
+    institution: "SENAI",
+    year: 2022,
+    linkedProjects: ["relogio"]
   }
 
   // ADICIONE ACIMA DESSE ULTIMO BRACKET, NÃO INSIRA NADA ABAIXO DESSE COMENTÁRIO AQUI!!!!

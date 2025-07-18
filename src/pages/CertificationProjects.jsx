@@ -19,16 +19,16 @@ function CertificationProjects() {
         <h2 className="certification-title-modal">{cert.name}</h2>
         <p className="certification-description-modal">{cert.description}</p>
         {relatedProjects.length === 0 ? (
-          <p style={{textAlign: 'center', color: '#888'}}>Nenhum projeto vinculado a este certificado.</p>
+          <p className="certification-no-projects">Nenhum projeto vinculado a este certificado.</p>
         ) : (
-          <div style={{width: '100%', display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'center'}}>
-            <h3 style={{marginBottom: '1rem'}}>Projetos Relacionados:</h3>
+          <div className="certification-projects-list">
+            <h3 className="certification-projects-title">Projetos Relacionados:</h3>
             {relatedProjects.map(proj => (
               <div key={proj.id} className="certification-project-card">
                 <img src={proj.image} alt={proj.name} />
                 <div className="project-info">
-                  <h4 style={{margin: 0, fontSize: '1.2rem'}}>{proj.name}</h4>
-                  <p style={{margin: '0.5rem 0 1rem 0', fontSize: '0.98em', color: '#444'}}>{proj.description.slice(0, 120)}...</p>
+                  <h4 className="certification-project-name">{proj.name}</h4>
+                  <p className="certification-project-desc">{proj.description.slice(0, 120)}...</p>
                   <button className="certification-button" onClick={() => {
                     sessionStorage.setItem('projectOrigin', 'certifications');
                     navigate(`/projects/${proj.id}`);
@@ -40,7 +40,7 @@ function CertificationProjects() {
             ))}
           </div>
         )}
-        <button className="certification-back-button" style={{marginTop: 32}} onClick={() => navigate('/certifications')}>
+        <button className="certification-back-button" onClick={() => navigate('/certifications')}>
           Voltar
         </button>
       </div>

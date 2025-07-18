@@ -125,6 +125,71 @@
   box-sizing: border-box;
 }
 
+.project-container .certification-back-button {
+  margin-bottom: 2.5rem;
+}
+
+/* Certificados relacionados - ProjectDetails.jsx */
+.related-certs-container {
+  margin-top: 32px;
+  width: 100%;
+  max-width: 600px;
+}
+.related-certs-title {
+  margin-bottom: 16px;
+}
+.related-certs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.related-cert-card {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 12px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.related-cert-img {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.related-cert-info {
+  flex: 1;
+  min-width: 180px;
+}
+.related-cert-name {
+  font-weight: bold;
+}
+.related-cert-meta {
+  font-size: 0.95em;
+  color: #555;
+}
+
+@media (max-width: 700px) {
+  .project-container .certification-back-button {
+    margin-bottom: 1.5rem;
+  }
+  .related-cert-btn {
+    display: block;
+    margin: 1rem auto 0 auto;
+    width: fit-content;
+  }
+  .related-cert-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .project-container .certification-back-button {
+    margin-bottom: 1.5rem;
+  }
+}
+
 /* Responsividade Projetos */
 @media (max-width: 1024px) {
   #project {

@@ -48,6 +48,7 @@ function ProjectDetail() {
 
   return (
     <div className="project-container">
+      <h2 className="project-title">{project.name}</h2>
       <div className="carousel">
         <Swiper
           navigation
@@ -75,23 +76,20 @@ function ProjectDetail() {
         </Swiper>
       </div>
 
-      <h2 className="project-title">{project.name}</h2>
-      <p className="project-description" style={{ whiteSpace: "pre-line" }}>
-        {project.description}
-      </p>
+      <p className="project-description">{project.description}</p>
 
       {relatedCerts.length > 0 && (
-        <div style={{marginTop: 32, width: '100%', maxWidth: 600}}>
-          <h3 style={{marginBottom: 16}}>Certificados Relacionados:</h3>
-          <div style={{display: 'flex', flexDirection: 'column', gap: 16}}>
+        <div className="related-certs-container">
+          <h3 className="related-certs-title">Certificados Relacionados:</h3>
+          <div className="related-certs-list">
             {relatedCerts.map(cert => (
-              <div key={cert.id} style={{display: 'flex', alignItems: 'center', background: '#f7f7ff', borderRadius: 12, padding: 12, gap: 16}}>
-                <img src={cert.image} alt={cert.name} style={{width: 60, height: 40, objectFit: 'cover', borderRadius: 6}} />
-                <div style={{flex: 1}}>
-                  <div style={{fontWeight: 'bold'}}>{cert.name}</div>
-                  <div style={{fontSize: '0.95em', color: '#555'}}>{cert.institution} ({cert.year})</div>
+              <div key={cert.id} className="related-cert-card">
+                <img src={cert.image} alt={cert.name} className="related-cert-img" />
+                <div className="related-cert-info">
+                  <div className="related-cert-name">{cert.name}</div>
+                  <div className="related-cert-meta">{cert.institution} ({cert.year})</div>
                 </div>
-                <button className="certification-button" onClick={() => navigate(`/certifications/${cert.id}`)}>
+                <button className="certification-button related-cert-btn" onClick={() => navigate(`/certifications/${cert.id}`)}>
                   Ver Certificado
                 </button>
               </div>
@@ -100,7 +98,7 @@ function ProjectDetail() {
         </div>
       )}
 
-      <button className="certification-back-button" style={{marginTop: 32}} onClick={handleBack}>
+      <button className="certification-back-button" onClick={handleBack}>
         Voltar
       </button>
     </div>

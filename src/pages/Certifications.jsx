@@ -7,7 +7,7 @@ function Certifications() {
   return (
     <div id="certification">
       <div className="container-certification">
-        {certifications.map((cert) => {
+        {certifications.map((cert, idx) => {
           const hasProjects = cert.linkedProjects && cert.linkedProjects.length > 0;
           const handleSaibaMais = () => {
             if (!hasProjects) {
@@ -18,8 +18,9 @@ function Certifications() {
               navigate(`/certifications/${cert.id}/projects`);
             }
           };
+          const isEven = idx % 2 === 1;
           return (
-            <div className="certification-content" key={cert.id}>
+            <div className={`certification-content${isEven ? ' reverse' : ''}`} key={cert.id}>
               <div className="certification-image-gradient">
                 <div className="certification-image-inner">
                   <img src={cert.image} alt={cert.name} />
@@ -32,21 +33,11 @@ function Certifications() {
                   <span><b>Ano:</b> {cert.year}</span>
                 </div>
                 <button
-                  className="certification-button"
+                  className="action-button"
                   onClick={handleSaibaMais}
                 >
                   Saiba Mais
                 </button>
-                {hasProjects && (
-                  <div style={{ marginTop: '1rem', fontSize: '0.95em', color: '#444' }}>
-                    Relacionado {cert.linkedProjects.length === 1 ? 'ao projeto:' : 'aos projetos:'}
-                    <ul style={{ margin: 0, paddingLeft: 18 }}>
-                      {cert.linkedProjects.map(pid => (
-                        <li key={pid}>{pid}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
               </div>
             </div>
           );
