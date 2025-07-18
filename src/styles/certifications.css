@@ -184,21 +184,79 @@
   margin-bottom: 1.5rem;
   text-align: center;
 }
-.certification-button {
-  margin-top: auto;
-  padding: 0.75rem 2.5rem;
-  background: #4b7bec;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1em;
+.certification-button, .certification-back-button {
+  font-size: large;
   font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s;
+  text-decoration: none;
+  border: 2px solid #1b1b1b;
+  padding: 20px 30px;
+  border-radius: 40px;
+  margin-top: 30px;
   display: block;
+  width: max-content;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: transparent;
+  color: #1b1b1b;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  cursor: pointer;
 }
-.certification-button:hover {
-  background: #3867d6;
+.certification-button::after, .certification-back-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.6) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  filter: blur(8px);
+  opacity: 0.7;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+.certification-button:hover::after, .certification-button:focus::after,
+.certification-back-button:hover::after, .certification-back-button:focus::after {
+  animation: shine-move-action 0.35s linear 1;
+  opacity: 1;
+}
+@keyframes shine-move-action {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+body.dark-mode .certification-button, body.dark-mode .certification-back-button {
+  border: 2px solid #f0f0f0;
+  background: #222;
+  color: #f0f0f0;
+}
+body.dark-mode .certification-button::after, body.dark-mode .certification-back-button::after {
+  background: linear-gradient(
+    120deg,
+    rgba(49, 18, 110, 0) 0%,
+    rgba(134, 41, 255, 0.45) 30%,
+    rgba(123, 23, 255, 0.45) 50%,
+    rgba(134, 41, 255, 0.45) 70%,
+    rgba(49, 18, 110, 0) 100%
+  );
+  filter: blur(12px);
+  opacity: 0.85;
+}
+@media (max-width: 480px) {
+  .certification-button, .certification-back-button {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box;
+  }
 }
 .certification-description {
   margin-top: 2.5rem;
@@ -387,21 +445,26 @@
   color: #444b57;
 }
 .certification-back-button {
-  padding: 0.75rem 2.5rem;
-  background: #4b7bec;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1em;
+  font-size: large;
   font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s;
-  margin-top: 1.5rem;
+  text-decoration: none;
+  border: 2px solid #1b1b1b;
+  padding: 20px 30px;
+  border-radius: 40px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   display: block;
-  margin-bottom: 2.5rem;
+  width: max-content;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: transparent;
+  color: #1b1b1b;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  cursor: pointer;
 }
 .certification-back-button:hover {
-  background: #3867d6;
+  background-color: transparent;
 }
 @media (max-width: 700px) {
   .certification-carousel-modal {

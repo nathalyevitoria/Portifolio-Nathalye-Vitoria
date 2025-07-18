@@ -178,6 +178,7 @@ body.dark-mode .cv-button::after {
     margin: 20px auto 0 auto;
     width: auto;
     text-align: center;
+    margin-bottom: 30px;
   }
 }
 
@@ -223,6 +224,7 @@ body.dark-mode .cv-button::after {
     margin: 20px auto 0 auto;
     width: auto;
     text-align: center;
+    margin-bottom: 30px;
   }
 }
 
@@ -268,6 +270,7 @@ body.dark-mode .cv-button::after {
     padding: 12px 0 !important;
     display: block;
     box-sizing: border-box;
+    margin-bottom: 30px;
   }
 }
 
@@ -288,6 +291,7 @@ body.dark-mode .cv-button::after {
     align-self: center;
     width: auto;
     display: block;
+    margin-bottom: 30px;
   }
 }
 @media (max-width: 480px) {
@@ -302,7 +306,8 @@ body.dark-mode .cv-button::after {
   .cv-button {
     margin-top: 8px;
     width: 100%;
-    padding: 12px 16px; /* Adicionado padding lateral */
+    padding: 12px 16px; /* Adicionado padding lateral */  
+    margin-bottom: 30px;
   }
   .cv-button {
     margin-top: 12px;
