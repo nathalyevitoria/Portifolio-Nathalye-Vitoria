@@ -7,6 +7,7 @@ import ProjectDetail from './pages/ProjectDetails'
 import LightButton from './components/LightButton'
 import Certifications from './pages/Certifications';
 import CertificationDetails from './pages/CertificationDetails';
+import CertificationProjects from './pages/CertificationProjects';
 
 function App() {
   return (
@@ -20,9 +21,10 @@ function App() {
         <Route path="/projects/:id" element={<ProjectDetail />} />
         <Route path="/certifications" element={<Certifications />} />
         <Route path="/certifications/:id" element={<CertificationDetails />} />
+        <Route path="/certifications/:id/projects" element={<CertificationProjects />} />
       </Routes>
     </>
   )
 }
 
-export default App
+export default App;

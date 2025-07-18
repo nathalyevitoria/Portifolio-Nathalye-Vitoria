@@ -1,15 +1,17 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function CertificationCard({ cert }) {
   const navigate = useNavigate();
   const hasProjects = cert.linkedProjects && cert.linkedProjects.length > 0;
 
   const handleSaibaMais = () => {
-    if (!hasProjects) return;
-    if (cert.linkedProjects.length === 1) {
+    if (!hasProjects) {
+      // Exibe detalhes do certificado
+      navigate(`/certifications/${cert.id}`);
+    } else if (cert.linkedProjects.length === 1) {
       navigate(`/projects/${cert.linkedProjects[0]}`);
     } else {
-      navigate(`/certifications/${cert.id}`);
+      navigate(`/certifications/${cert.id}/projects`);
     }
   };
 
@@ -29,7 +31,6 @@ function CertificationCard({ cert }) {
         <button
           className="certification-button"
           onClick={handleSaibaMais}
-          disabled={!hasProjects}
         >
           Saiba Mais
         </button>
