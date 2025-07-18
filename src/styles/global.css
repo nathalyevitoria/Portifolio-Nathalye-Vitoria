@@ -392,3 +392,11 @@ body.dark-mode .action-button::after {
   filter: blur(12px);
   opacity: 0.85;
 }
+
+@media (max-width: 480px) {
+  .cv-button {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box;
+  }
+}
