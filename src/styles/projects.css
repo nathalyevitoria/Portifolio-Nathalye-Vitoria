@@ -3,38 +3,36 @@
 #project {
   color: #444b57;
   display: flex;
-  flex-direction: column; /* Adicionado para empilhar os filhos verticalmente */
-  /* Removido height: 100vh; para permitir que o conteúdo role */
+  flex-direction: column;
   background-attachment: fixed;
   background-size: cover;
-  /* Removido justify-content: center; para permitir o fluxo natural do conteúdo */
-  padding-top: 5rem; /* Mantido para espaçamento do cabeçalho */
+  padding-top: 5rem;
 }
 
 /* Cards menores e mais espaçamento entre janela e cards */
 #project .list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px; /* restaurado para 40px */
+  gap: 40px;
 }
 
 #project .list .item img {
   width: 100%;
-  height: 160px; /* diminuído de 200px para 160px */
+  height: 160px;
   object-fit: cover;
 }
 
 #project .list .item {
-  border-radius: 24px; /* levemente reduzido para acompanhar o card menor */
+  border-radius: 24px;
   background-color: #ffffff;
   overflow: hidden;
   position: relative;
-  padding-bottom: 10px; /* leve respiro extra na base */
-  transition: background-color 0.2s; /* Adicionado para transição suave do background */
-  display: flex; /* Adicionado para usar flexbox no item */
-  flex-direction: column; /* Conteúdo do item em coluna */
-  justify-content: space-between; /* Distribui o espaço para empurrar o autor para baixo */
-  min-height: 320px; /* Altura mínima para os cards, ajuste conforme necessário */
+  padding-bottom: 10px;
+  transition: background-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
 }
 
 #project .list .item:hover {
@@ -54,79 +52,71 @@
   padding: 10px;
   font-style: italic;
   border-top-right-radius: 20px;
-  transition: background-color 0.2s, color 0.2s; /* Adicionado para transição suave */
+  transition: background-color 0.2s, color 0.2s;
 }
 
 #project .list .name {
   font-weight: bold;
   font-size: large;
   padding: 10px;
-  transition: color 0.2s; /* Adicionado para transição suave */
+  transition: color 0.2s;
 }
 
 #project .list .item .text {
   padding: 0 10px 10px 10px;
   font-size: small;
-  flex-grow: 1; /* Permite que o texto ocupe o espaço disponível */
-  /* Adicionado para controlar a altura do texto e evitar que cards fiquem muito grandes */
-  min-height: 80px; /* Altura mínima para o texto */
-  max-height: 120px; /* Altura máxima para o texto, ajuste conforme necessário */
-  overflow: hidden; /* Corta o texto que excede a altura */
-  text-overflow: ellipsis; /* Adiciona reticências se o texto for cortado */
-  display: -webkit-box; /* Para compatibilidade com webkit */
-  -webkit-line-clamp: 5; /* Limita o texto a 5 linhas, ajuste conforme necessário */
-  -webkit-box-orient: vertical; /* Orientação vertical para o box */
-  transition: color 0.2s; /* Adicionado para transição suave */
+  flex-grow: 1;
+  min-height: 80px;
+  max-height: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  transition: color 0.2s;
 }
 
 #project .list .item .author {
   display: flex;
-  justify-content: center; /* Alterado para centralizar o conteúdo do autor */
+  justify-content: center;
   padding: 10px;
   border-top: 1px solid #eee;
-  transition: border-color 0.2s; /* Adicionado para transição suave */
+  transition: border-color 0.2s;
 }
 
 #project .list .item .link {
   font-weight: bold;
   color: dodgerblue;
-  transition: color 0.2s; /* Adicionado para transição suave */
+  transition: color 0.2s;
 }
 
 /* Estilização dos itens de projeto no modo escuro */
 body.dark-mode #project .list .item {
-  /* Alterado para cor sólida em tons de preto/cinza */
-  background-color: #2a2a2a; /* Um cinza escuro para o fundo */
-  /* Removidas as propriedades de gradiente e animação */
+  background-color: #2a2a2a;
   background: none; 
   background-size: auto; 
   animation: none; 
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra mais escura para destacar */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 body.dark-mode #project .list .item:hover {
-  /* Alterado para uma cor sólida ligeiramente mais clara no hover */
-  background-color: #3a3a3a; /* Um cinza um pouco mais claro no hover */
-  /* Removidas as propriedades de gradiente e animação para permitir que background-color funcione */
-  /* background: none; */
-  /* background-size: auto; */
-  /* background-position: auto; */
+  background-color: #3a3a3a;
 }
 
 
 body.dark-mode #project .list .name,
 body.dark-mode #project .list .item .text,
 body.dark-mode #project .list .item .link {
-  color: #f0f0f0; /* Cor clara para o texto no modo escuro */
+  color: #f0f0f0;
 }
 
 body.dark-mode #project .list .item .index {
-  background-color: #1a1a1a; /* Cor de fundo mais escura para o índice no modo escuro */
-  color: #f0f0f0; /* Cor clara para o índice no modo escuro */
+  background-color: #1a1a1a;
+  color: #f0f0f0;
 }
 
 body.dark-mode #project .list .item .author {
-  border-top: 1px solid #555; /* Borda mais clara para o modo escuro */
+  border-top: 1px solid #555;
 }
 
 
@@ -177,7 +167,7 @@ body.dark-mode #project .list .item .author {
   width: 100vw;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 32px 0 32px; /* restaurado para 32px */
+  padding: 0 32px 0 32px;
   box-sizing: border-box;
 }
 
@@ -223,7 +213,6 @@ body.dark-mode #project .list .item .author {
   animation: shine-move-action 0.35s linear 1;
   opacity: 1;
 }
-/* Atualizado para loop perfeito e suavizado */
 @keyframes shine-move-action {
   0% {
       left: -60%;
@@ -322,7 +311,7 @@ body.dark-mode .related-cert-btn::after, body.dark-mode .certification-back-butt
 @media (max-width: 1024px) {
   #project {
       padding-top: 70px;
-      min-height: 100vh;
+      min-height: 100vh; /* Mantido para telas maiores, mas pode ser ajustado se causar problemas */
   }
   .project-container {
       padding: 0 2rem;
@@ -343,7 +332,7 @@ body.dark-mode .related-cert-btn::after, body.dark-mode .certification-back-butt
 @media (max-width: 854px) {
   #project {
       padding-top: 60px;
-      min-height: 100vh;
+      min-height: 100vh; /* Mantido para telas maiores, mas pode ser ajustado se causar problemas */
   }
   .container-project {
       width: 100vw;
@@ -356,11 +345,11 @@ body.dark-mode .related-cert-btn::after, body.dark-mode .certification-back-butt
   }
   #project .list {
       grid-template-columns: 1fr;
-      gap: 36px; /* aumentado de 28px para 36px */
+      gap: 36px;
       padding: 36px 0;
   }
   #project .list .item img {
-      height: 140px; /* menor para telas pequenas */
+      height: 140px;
   }
   #project .list .item .text {
       font-size: 1.1em;
@@ -375,7 +364,7 @@ body.dark-mode .related-cert-btn::after, body.dark-mode .certification-back-butt
 @media (max-width: 480px) {
   #project {
       padding-top: 50px;
-      min-height: 100vh;
+      min-height: 100vh; /* Mantido para telas maiores, mas pode ser ajustado se causar problemas */
   }
   .container-project {
       width: 100vw;
@@ -390,10 +379,10 @@ body.dark-mode .related-cert-btn::after, body.dark-mode .certification-back-butt
       height: 10rem;
   }
   #project .list .item img {
-      height: 100px; /* menor para mobile */
+      height: 100px;
   }
   #project .list {
-      gap: 28px; /* aumentado de 20px para 28px */
+      gap: 28px;
       padding: 24px 0;
   }
   #project .list .item .text {
@@ -420,17 +409,6 @@ body.dark-mode .related-cert-btn::after, body.dark-mode .certification-back-butt
       background-position: 0% 0%;
   }
   100% {
-      background-position: -100% 0%; /* Move o background pela sua largura total para loop perfeito */
+      background-position: -100% 0%;
   }
-}
-
-/* Ajuste da animação para nav-underline para ser mais suave */
-nav .nav-underline {
-  animation: move-gradient 12s linear infinite alternate; /* Aumentado para 12 segundos e adicionado alternate */
-}
-
-/* Ajuste da animação para action-button (texto e ::before) para ser mais suave */
-.action-button,
-.action-button::before {
-  animation: move-gradient 12s linear infinite alternate; /* Aumentado para 12 segundos e adicionado alternate */
 }
