@@ -3,11 +3,12 @@
 #project {
   color: #444b57;
   display: flex;
-  height: 100vh;
+  /* Removido height: 100vh; para permitir que o conteúdo role */
   background-attachment: fixed;
   background-size: cover;
   justify-content: center;
-  padding-top: 5rem;
+  /* Removido align-items: center; para permitir o fluxo natural do conteúdo */
+  padding-top: 5rem; /* Mantido para espaçamento do cabeçalho */
 }
 
 /* Cards menores e mais espaçamento entre janela e cards */
