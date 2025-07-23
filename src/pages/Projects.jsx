@@ -21,7 +21,7 @@ function Projects() {
               </div>
               <div className="author">
                 <Link to={`/projects/${project.id}`} className="link">
-                  Ver Projeto -{">"}
+                  Ver Projeto
                 </Link>
               </div>
             </div>

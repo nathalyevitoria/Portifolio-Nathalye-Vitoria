@@ -3,11 +3,11 @@
 #project {
   color: #444b57;
   display: flex;
+  flex-direction: column; /* Adicionado para empilhar os filhos verticalmente */
   /* Removido height: 100vh; para permitir que o conteúdo role */
   background-attachment: fixed;
   background-size: cover;
-  justify-content: center;
-  /* Removido align-items: center; para permitir o fluxo natural do conteúdo */
+  /* Removido justify-content: center; para permitir o fluxo natural do conteúdo */
   padding-top: 5rem; /* Mantido para espaçamento do cabeçalho */
 }
 
@@ -31,6 +31,10 @@
   position: relative;
   padding-bottom: 10px; /* leve respiro extra na base */
   transition: background-color 0.2s; /* Adicionado para transição suave do background */
+  display: flex; /* Adicionado para usar flexbox no item */
+  flex-direction: column; /* Conteúdo do item em coluna */
+  justify-content: space-between; /* Distribui o espaço para empurrar o autor para baixo */
+  min-height: 320px; /* Altura mínima para os cards, ajuste conforme necessário */
 }
 
 #project .list .item:hover {
@@ -63,12 +67,21 @@
 #project .list .item .text {
   padding: 0 10px 10px 10px;
   font-size: small;
+  flex-grow: 1; /* Permite que o texto ocupe o espaço disponível */
+  /* Adicionado para controlar a altura do texto e evitar que cards fiquem muito grandes */
+  min-height: 80px; /* Altura mínima para o texto */
+  max-height: 120px; /* Altura máxima para o texto, ajuste conforme necessário */
+  overflow: hidden; /* Corta o texto que excede a altura */
+  text-overflow: ellipsis; /* Adiciona reticências se o texto for cortado */
+  display: -webkit-box; /* Para compatibilidade com webkit */
+  -webkit-line-clamp: 5; /* Limita o texto a 5 linhas, ajuste conforme necessário */
+  -webkit-box-orient: vertical; /* Orientação vertical para o box */
   transition: color 0.2s; /* Adicionado para transição suave */
 }
 
 #project .list .item .author {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Alterado para centralizar o conteúdo do autor */
   padding: 10px;
   border-top: 1px solid #eee;
   transition: border-color 0.2s; /* Adicionado para transição suave */
@@ -93,7 +106,7 @@ body.dark-mode #project .list .item {
 
 body.dark-mode #project .list .item:hover {
   /* Alterado para uma cor sólida ligeiramente mais clara no hover */
-  background-color: #3a3a3a; 
+  background-color: #3a3a3a; /* Um cinza um pouco mais claro no hover */
   /* Removidas as propriedades de gradiente e animação */
   background: none;
   background-size: auto;
