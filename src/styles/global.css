@@ -363,9 +363,8 @@ body.dark-mode .sidebar-separator {
 
 .action-button {
   font-size: large;
-  font-weight: bold;
   text-decoration: none;
-  border: 2px solid #1b1b1b;
+  border: none; /* Adicionado para remover qualquer borda padrão */
   padding: 20px 30px;
   border-radius: 40px;
   margin-top: 30px;
@@ -374,10 +373,40 @@ body.dark-mode .sidebar-separator {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  background: transparent;
-  color: #1b1b1b;
+  background: transparent; /* Mantido transparente para que o ::before seja visível */
   transition: border-color 0.2s, background 0.2s, color 0.2s;
   cursor: pointer;
+  isolation: isolate; /* Garante o correto empilhamento com pseudo-elementos */
+
+  /* Nova estilização de gradiente para o texto */
+  background: linear-gradient(90deg, #3172ff 0%, #6718ce 20%, #8629ff 50%, #3172ff 80%, #6718ce 100%, #8629ff 120%, #3172ff 150%, #3172ff 200%);
+  background-size: 800% 100%;
+  background-repeat: repeat-x;
+  animation: move-gradient 6s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.action-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Estilização de gradiente para a borda */
+  background: linear-gradient(90deg, #3172ff 0%, #6718ce 20%, #8629ff 50%, #3172ff 80%, #6718ce 100%, #8629ff 120%, #3172ff 150%, #3172ff 200%);
+  background-size: 800% 100%;
+  background-repeat: repeat-x;
+  animation: move-gradient 6s linear infinite;
+  border-radius: inherit; /* Herda o border-radius do elemento pai */
+  z-index: -1; /* Posiciona atrás do conteúdo do botão */
+  padding: 2px; /* Cria o efeito de borda */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
 .action-button::after {
@@ -415,11 +444,6 @@ body.dark-mode .sidebar-separator {
   }
 }
 
-body.dark-mode .action-button {
-  border: 2px solid #f0f0f0;
-  background: #222;
-  color: #f0f0f0;
-}
 body.dark-mode .action-button::after {
   background: linear-gradient(
       120deg,
@@ -432,7 +456,6 @@ body.dark-mode .action-button::after {
   filter: blur(12px);
   opacity: 0.85;
 }
-
 @media (max-width: 480px) {
   .cv-button {
       padding-left: 16px !important;
