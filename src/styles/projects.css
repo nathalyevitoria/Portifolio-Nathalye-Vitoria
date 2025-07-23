@@ -107,10 +107,10 @@ body.dark-mode #project .list .item {
 body.dark-mode #project .list .item:hover {
   /* Alterado para uma cor sólida ligeiramente mais clara no hover */
   background-color: #3a3a3a; /* Um cinza um pouco mais claro no hover */
-  /* Removidas as propriedades de gradiente e animação */
-  background: none;
-  background-size: auto;
-  background-position: auto;
+  /* Removidas as propriedades de gradiente e animação para permitir que background-color funcione */
+  /* background: none; */
+  /* background-size: auto; */
+  /* background-position: auto; */
 }
 
 
