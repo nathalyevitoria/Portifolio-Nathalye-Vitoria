@@ -29,6 +29,7 @@
   overflow: hidden;
   position: relative;
   padding-bottom: 10px; /* leve respiro extra na base */
+  transition: background-color 0.2s; /* Adicionado para transição suave do background */
 }
 
 #project .list .item:hover {
@@ -48,17 +49,20 @@
   padding: 10px;
   font-style: italic;
   border-top-right-radius: 20px;
+  transition: background-color 0.2s, color 0.2s; /* Adicionado para transição suave */
 }
 
 #project .list .name {
   font-weight: bold;
   font-size: large;
   padding: 10px;
+  transition: color 0.2s; /* Adicionado para transição suave */
 }
 
 #project .list .item .text {
   padding: 0 10px 10px 10px;
   font-size: small;
+  transition: color 0.2s; /* Adicionado para transição suave */
 }
 
 #project .list .item .author {
@@ -66,12 +70,47 @@
   justify-content: space-between;
   padding: 10px;
   border-top: 1px solid #eee;
+  transition: border-color 0.2s; /* Adicionado para transição suave */
 }
 
 #project .list .item .link {
   font-weight: bold;
   color: dodgerblue;
+  transition: color 0.2s; /* Adicionado para transição suave */
 }
+
+/* Estilização dos itens de projeto no modo escuro */
+body.dark-mode #project .list .item {
+  /* Gradiente ajustado para loop perfeito */
+  background: linear-gradient(90deg, #3172ff 0%, #6718ce 33%, #8629ff 66%, #3172ff 100%);
+  background-size: 200% 100%; /* Duas repetições do padrão */
+  background-repeat: repeat-x;
+  animation: move-gradient 20s linear infinite alternate; /* Aumentado para 20 segundos e adicionado alternate */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Adiciona uma sombra mais escura para destacar */
+}
+
+body.dark-mode #project .list .item:hover {
+  /* Removido background-position: 50% 0%; para evitar quebra na animação contínua */
+  background: linear-gradient(90deg, #3172ff 0%, #6718ce 33%, #8629ff 66%, #3172ff 100%); /* Mantém o gradiente no hover */
+  background-size: 200% 100%;
+}
+
+
+body.dark-mode #project .list .name,
+body.dark-mode #project .list .item .text,
+body.dark-mode #project .list .item .link {
+  color: #f0f0f0; /* Cor clara para o texto no modo escuro */
+}
+
+body.dark-mode #project .list .item .index {
+  background-color: #2a2a2a; /* Cor de fundo escura para o índice no modo escuro */
+  color: #f0f0f0; /* Cor clara para o índice no modo escuro */
+}
+
+body.dark-mode #project .list .item .author {
+  border-top: 1px solid #444; /* Borda mais clara para o modo escuro */
+}
+
 
 .project-container {
   max-width: 100%;
@@ -150,10 +189,10 @@
   width: 60%;
   height: 100%;
   background: linear-gradient(
-    120deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.6) 50%,
-    rgba(255,255,255,0) 100%
+      120deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.6) 50%,
+      rgba(255,255,255,0) 100%
   );
   filter: blur(8px);
   opacity: 0.7;
@@ -166,12 +205,13 @@
   animation: shine-move-action 0.35s linear 1;
   opacity: 1;
 }
+/* Atualizado para loop perfeito e suavizado */
 @keyframes shine-move-action {
   0% {
-    left: -60%;
+      left: -60%;
   }
   100% {
-    left: 120%;
+      left: 120%;
   }
 }
 body.dark-mode .related-cert-btn, body.dark-mode .certification-back-button {
@@ -181,21 +221,21 @@ body.dark-mode .related-cert-btn, body.dark-mode .certification-back-button {
 }
 body.dark-mode .related-cert-btn::after, body.dark-mode .certification-back-button::after {
   background: linear-gradient(
-    120deg,
-    rgba(49, 18, 110, 0) 0%,
-    rgba(134, 41, 255, 0.45) 30%,
-    rgba(123, 23, 255, 0.45) 50%,
-    rgba(134, 41, 255, 0.45) 70%,
-    rgba(49, 18, 110, 0) 100%
+      120deg,
+      rgba(49, 18, 110, 0) 0%,
+      rgba(134, 41, 255, 0.45) 30%,
+      rgba(123, 23, 255, 0.45) 50%,
+      rgba(134, 41, 255, 0.45) 70%,
+      rgba(49, 18, 110, 0) 100%
   );
   filter: blur(12px);
   opacity: 0.85;
 }
 @media (max-width: 480px) {
   .related-cert-btn, .certification-back-button {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-    box-sizing: border-box;
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+      box-sizing: border-box;
   }
 }
 
@@ -241,117 +281,138 @@ body.dark-mode .related-cert-btn::after, body.dark-mode .certification-back-butt
 
 @media (max-width: 700px) {
   .project-container .certification-back-button {
-    margin-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
   }
   .related-cert-btn {
-    display: block;
-    margin: 1rem auto 0 auto;
-    width: fit-content;
+      display: block;
+      margin: 1rem auto 0 auto;
+      width: fit-content;
   }
   .related-cert-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
   }
   .project-container .certification-back-button {
-    margin-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
   }
 }
 
 /* Responsividade Projetos */
 @media (max-width: 1024px) {
   #project {
-    padding-top: 70px;
-    min-height: 100vh;
+      padding-top: 70px;
+      min-height: 100vh;
   }
   .project-container {
-    padding: 0 2rem;
+      padding: 0 2rem;
   }
   .carousel {
-    width: 100%;
-    height: 22rem;
+      width: 100%;
+      height: 22rem;
   }
   .container-project {
-    padding: 0 32px 0 32px;
+      padding: 0 32px 0 32px;
   }
   #project .list {
-    gap: 44px;
-    padding: 44px 0;
+      gap: 44px;
+      padding: 44px 0;
   }
 }
 
 @media (max-width: 854px) {
   #project {
-    padding-top: 60px;
-    min-height: 100vh;
+      padding-top: 60px;
+      min-height: 100vh;
   }
   .container-project {
-    width: 100vw;
-    max-width: 100vw;
-    padding: 0 24px;
-    box-sizing: border-box;
+      width: 100vw;
+      max-width: 100vw;
+      padding: 0 24px;
+      box-sizing: border-box;
   }
   .project-container {
-    padding: 0 1rem;
+      padding: 0 1rem;
   }
   #project .list {
-    grid-template-columns: 1fr;
-    gap: 36px; /* aumentado de 28px para 36px */
-    padding: 36px 0;
+      grid-template-columns: 1fr;
+      gap: 36px; /* aumentado de 28px para 36px */
+      padding: 36px 0;
   }
   #project .list .item img {
-    height: 140px; /* menor para telas pequenas */
+      height: 140px; /* menor para telas pequenas */
   }
   #project .list .item .text {
-    font-size: 1.1em;
-    text-align: center;
+      font-size: 1.1em;
+      text-align: center;
   }
   #project .list .name {
-    text-align: center;
-    font-size: 1.2em;
+      text-align: center;
+      font-size: 1.2em;
   }
 }
 
 @media (max-width: 480px) {
   #project {
-    padding-top: 50px;
-    min-height: 100vh;
+      padding-top: 50px;
+      min-height: 100vh;
   }
   .container-project {
-    width: 100vw;
-    max-width: 100vw;
-    box-sizing: border-box;
+      width: 100vw;
+      max-width: 100vw;
+      box-sizing: border-box;
   }
   .project-container {
-    padding: 0 0.5rem;
+      padding: 0 0.5rem;
   }
   .carousel {
-    width: 100%;
-    height: 10rem;
+      width: 100%;
+      height: 10rem;
   }
   #project .list .item img {
-    height: 100px; /* menor para mobile */
+      height: 100px; /* menor para mobile */
   }
   #project .list {
-    gap: 28px; /* aumentado de 20px para 28px */
-    padding: 24px 0;
+      gap: 28px; /* aumentado de 20px para 28px */
+      padding: 24px 0;
   }
   #project .list .item .text {
-    font-size: 1.2em;
-    text-align: center;
+      font-size: 1.2em;
+      text-align: center;
   }
   #project .list .name {
-    text-align: center;
-    font-size: 1.1em;
+      text-align: center;
+      font-size: 1.1em;
   }
 }
 
 @media (max-width: 1230px) and (min-width: 856px) {
   #project .list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 36px;
-    padding: 36px 0;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px;
+      padding: 36px 0;
   }
-} 
+}
+
+/* Ajuste da animação global move-gradient para loop perfeito */
+@keyframes move-gradient {
+  0% {
+      background-position: 0% 0%;
+  }
+  100% {
+      background-position: -100% 0%; /* Move o background pela sua largura total para loop perfeito */
+  }
+}
+
+/* Ajuste da animação para nav-underline para ser mais suave */
+nav .nav-underline {
+  animation: move-gradient 12s linear infinite alternate; /* Aumentado para 12 segundos e adicionado alternate */
+}
+
+/* Ajuste da animação para action-button (texto e ::before) para ser mais suave */
+.action-button,
+.action-button::before {
+  animation: move-gradient 12s linear infinite alternate; /* Aumentado para 12 segundos e adicionado alternate */
+}
