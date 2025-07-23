@@ -3,6 +3,7 @@ import '../styles/home.css';
 function Home() {
   return (
     <section className="over-hidden">
+      <div class="blur-circle c1"></div>
       <div className="home">
         <div className="content">
           <div className="name">

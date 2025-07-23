@@ -29,7 +29,7 @@
 }
 
 /* Estilos para os círculos de desfoque de fundo */
-.blur-circle {
+.blur-circle1 {
   position: absolute;
   transform: translate(-50%, -50%); /* Centraliza o círculo no ponto de origem */
   border-radius: 50%; /* Torna o elemento um círculo perfeito */
@@ -39,7 +39,7 @@
 }
 
 /* Posição e estilo do primeiro círculo */
-.c1 {
+.c01 {
   top: 80%;
   left: 10%;
   width: 40rem;
@@ -49,7 +49,7 @@
 }
 
 /* Posição e estilo do segundo círculo */
-.c2 {
+.c02 {
   top: 20%;
   left: 80%;
   width: 60rem;
@@ -328,7 +328,7 @@ body.dark-mode .contact-btn::after {
   }
 }
 
-@keyframes move-circular-c1 {
+@keyframes move-circular-c01 {
   0%   { top: calc(80% + 0rem); left: calc(10% + 0rem);}
   25%  { top: calc(80% + 10rem); left: calc(10% + 10rem);}
   50%  { top: calc(80% + 0rem); left: calc(10% + 20rem);}
@@ -336,7 +336,7 @@ body.dark-mode .contact-btn::after {
   100% { top: calc(80% + 0rem); left: calc(10% + 0rem);}
 }
 
-@keyframes move-circular-c2 {
+@keyframes move-circular-c02 {
   0%   { top: calc(20% + 0rem); left: calc(80% + 0rem);}
   25%  { top: calc(20% - 12rem); left: calc(80% + 12rem);}
   50%  { top: calc(20% + 0rem); left: calc(80% + 24rem);}
@@ -344,12 +344,12 @@ body.dark-mode .contact-btn::after {
   100% { top: calc(20% + 0rem); left: calc(80% + 0rem);}
 }
 
-.c1 {
-  animation: move-circular-c1 16s linear infinite;
+.c01 {
+  animation: move-circular-c01 16s linear infinite;
 }
 
-.c2 {
-  animation: move-circular-c2 22s linear infinite;
+.c02 {
+  animation: move-circular-c02 22s linear infinite;
 }
 
 /* --- Órbita circular dos círculos de blur --- */
@@ -373,11 +373,11 @@ body.dark-mode .contact-btn::after {
   animation: orbit-c 20s linear infinite;
 }
 
-.orbit1 .c1 {
+.orbit1 .c01 {
   transform: translate(-50%, -50%) translateX(220px);
 }
 
-.orbit2 .c2 {
+.orbit2 .c02 {
   transform: translate(-50%, -50%) rotate(180deg) translateX(220px);
 }
 

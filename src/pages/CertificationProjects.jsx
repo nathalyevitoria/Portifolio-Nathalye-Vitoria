@@ -15,6 +15,8 @@ function CertificationProjects() {
 
   return (
     <div className="certification-container">
+      <div class="blur-circle c1"></div>
+      <div class="blur-circle c2"></div>
       <div className="certification-details-modal">
         <h2 className="certification-title-modal">{cert.name}</h2>
         <p className="certification-description-modal">{cert.description}</p>

@@ -4,10 +4,10 @@ function Contact() {
   return (
     <div id="contact">      
       <div className="blur-orbit orbit1">
-        <div className="blur-circle c1"></div>
+        <div className="blur-circle1 c01"></div>
       </div>
       <div className="blur-orbit orbit2">
-        <div className="blur-circle c2"></div>
+        <div className="blur-circle1 c02"></div>
       </div>
       <div className="container">
         <div className="thank text-gradient">Obrigada!</div>

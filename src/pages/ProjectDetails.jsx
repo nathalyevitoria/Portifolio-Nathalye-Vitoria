@@ -48,6 +48,8 @@ function ProjectDetail() {
 
   return (
     <div className="project-container">
+      <div class="blur-circle c1"></div>
+      <div class="blur-circle c2"></div>
       <h2 className="project-title">{project.name}</h2>
       <div className="carousel">
         <Swiper

@@ -25,6 +25,8 @@ function CertificationDetails() {
 
   return (
     <div className="certification-container">
+      <div class="blur-circle c1"></div>
+      <div class="blur-circle c2"></div>
       <div className="certification-details-modal">
         <div className="certification-image-gradient" style={{maxWidth: 600, marginBottom: 32}}>
           <div className="certification-image-inner">

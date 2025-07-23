@@ -6,6 +6,8 @@ function Certifications() {
   const navigate = useNavigate();
   return (
     <div id="certification">
+      <div class="blur-circle c1"></div>
+      <div class="blur-circle c2"></div>
       <div className="container-certification">
         {certifications.map((cert, idx) => {
           const hasProjects = cert.linkedProjects && cert.linkedProjects.length > 0;
