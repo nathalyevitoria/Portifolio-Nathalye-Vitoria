@@ -96,7 +96,6 @@
 .certification-title {
   font-size: 1.875rem;
   font-weight: bold;
-  margin-bottom: 1rem;
 }
 
 .certification-description {
@@ -107,7 +106,6 @@
 .certification-meta {
   font-size: 1.1em;
   color: #555;
-  margin-bottom: 2rem;
 }
 
 .carousel {
@@ -174,13 +172,11 @@
 .certification-title {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
   text-align: center;
 }
 .certification-meta {
   font-size: 1.1em;
   color: #555;
-  margin-bottom: 1.5rem;
   text-align: center;
 }
 .certification-button, .certification-back-button {
@@ -265,7 +261,15 @@
 body.dark-mode .certification-button, body.dark-mode .certification-back-button {
   border: none; /* Removido para usar a borda gradiente */
   background: transparent; /* Mantido transparente para que o ::before seja visível */
-  /* Removido: color: #f0f0f0; - o gradiente no texto cuidará da cor */
+  /* Reaplicar o gradiente para o texto no modo escuro */
+  background: linear-gradient(90deg, #3172ff 0%, #6718ce 20%, #8629ff 50%, #3172ff 80%, #6718ce 100%, #8629ff 120%, #3172ff 150%, #3172ff 200%);
+  background-size: 800% 100%;
+  background-repeat: repeat-x;
+  animation: move-gradient 6s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 body.dark-mode .certification-button::after, body.dark-mode .certification-back-button::after {
   background: linear-gradient(
@@ -461,7 +465,6 @@ body.dark-mode .certification-button::after, body.dark-mode .certification-back-
 .certification-title-modal {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1.5rem;
   text-align: center;
 }
 .certification-description-modal {
@@ -470,7 +473,6 @@ body.dark-mode .certification-button::after, body.dark-mode .certification-back-
   font-size: 1.1em;
   text-align: left;
   white-space: pre-line;
-  color: #444b57;
 }
 .certification-back-button {
   font-size: large;
@@ -788,6 +790,15 @@ body.dark-mode .certification-button::after, body.dark-mode .certification-back-
 body.dark-mode .related-cert-btn {
   border: none; /* Adicionado para remover qualquer borda padrão no modo escuro */
   background: transparent; /* Mantido transparente para que o ::before seja visível */
+  /* Reaplicar o gradiente para o texto no modo escuro */
+  background: linear-gradient(90deg, #3172ff 0%, #6718ce 20%, #8629ff 50%, #3172ff 80%, #6718ce 100%, #8629ff 120%, #3172ff 150%, #3172ff 200%);
+  background-size: 800% 100%;
+  background-repeat: repeat-x;
+  animation: move-gradient 6s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 body.dark-mode .related-cert-btn::after {

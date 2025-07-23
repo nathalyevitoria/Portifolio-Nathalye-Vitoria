@@ -368,7 +368,7 @@ body.dark-mode .sidebar-separator {
   border: none; /* Adicionado para remover qualquer borda padrão */
   padding: 20px 30px;
   border-radius: 40px;
-  margin-top: 30px;
+  margin-bottom: 50px;
   display: block;
   width: max-content;
   position: relative;
