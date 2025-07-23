@@ -108,6 +108,7 @@
 
 /* Contêiner para os botões de contato */
 .contact-buttons {
+  font-weight: bold;
   display: flex;
   flex-direction: row; /* Layout padrão em linha para telas maiores */
   gap: 32px; /* Espaçamento entre os botões */

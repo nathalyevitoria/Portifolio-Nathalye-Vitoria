@@ -363,6 +363,7 @@ body.dark-mode .sidebar-separator {
 
 .action-button {
   font-size: large;
+  font-weight: bold;
   text-decoration: none;
   border: none; /* Adicionado para remover qualquer borda padrão */
   padding: 20px 30px;
