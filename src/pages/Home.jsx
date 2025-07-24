@@ -32,7 +32,7 @@ function Home() {
         </div>
         <div className="avatar">
           <div className="card">
-            <img className="img" src="/perfil.jpeg" alt="perfil" />
+            <img className="img" src="/perfil.png" alt="perfil" />
           </div>
         </div>
         <a

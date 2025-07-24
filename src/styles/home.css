@@ -25,7 +25,8 @@ section {
 }
 
 /* Ajuste para permitir scroll na Home */
-section, .over-hidden {
+section,
+.over-hidden {
   height: auto !important;
   min-height: 100vh;
   overflow-y: auto !important;
@@ -72,12 +73,10 @@ span {
   left: -60%;
   width: 60%;
   height: 100%;
-  background: linear-gradient(
-    120deg,
-    rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.6) 50%,
-    rgba(255,255,255,0) 100%
-  );
+  background: linear-gradient(120deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.6) 50%,
+          rgba(255, 255, 255, 0) 100%);
   filter: blur(8px);
   opacity: 0.7;
   pointer-events: none;
@@ -93,22 +92,21 @@ span {
 
 @keyframes shine-move-cv {
   0% {
-    left: -60%;
+      left: -60%;
   }
+
   100% {
-    left: 120%;
+      left: 120%;
   }
 }
 
 body.dark-mode .cv-button::after {
-  background: linear-gradient(
-    120deg,
-    rgba(49, 18, 110, 0) 0%,
-    rgba(134, 41, 255, 0.45) 30%,
-    rgba(123, 23, 255, 0.45) 50%,
-    rgba(134, 41, 255, 0.45) 70%,
-    rgba(49, 18, 110, 0) 100%
-  );
+  background: linear-gradient(120deg,
+          rgba(49, 18, 110, 0) 0%,
+          rgba(134, 41, 255, 0.45) 30%,
+          rgba(123, 23, 255, 0.45) 50%,
+          rgba(134, 41, 255, 0.45) 70%,
+          rgba(49, 18, 110, 0) 100%);
   filter: blur(12px);
   opacity: 0.85;
 }
@@ -131,13 +129,15 @@ body.dark-mode .cv-button::after {
 
 @keyframes float {
   0% {
-    transform: translateY(0px);
+      transform: translateY(0px);
   }
+
   50% {
-    transform: translateY(-20px);
+      transform: translateY(-20px);
   }
+
   100% {
-    transform: translateY(0px);
+      transform: translateY(0px);
   }
 }
 
@@ -145,11 +145,13 @@ body.dark-mode .cv-button::after {
   display: inline-flex;
   flex-direction: column;
   width: min(100%, 400px);
-  box-shadow: 0 150px 150px #9a45e933;
   transition: 0.5s;
 }
+
 .card:hover {
-  box-shadow: 0 150px 150px #4587e955;
+  box-shadow:
+      -75px -75px 100px #9a45e955,
+      75px 75px 100px #4587e955;
 }
 
 .img {
@@ -158,177 +160,263 @@ body.dark-mode .cv-button::after {
   object-fit: cover;
   object-position: top;
   clip-path: polygon(81% 0, 100% 18%, 100% 100%, 0 100%, 0 0);
+  background-color: transparent;
 }
 
 /* Responsividade Home */
 @media (max-width: 1330px) {
   .home {
-    padding: 80px 40px 0 40px;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-    /* padding: 0 24px; */
+      padding: 80px 40px 0 40px;
+      grid-template-columns: 1fr;
+      /* Volta a ser uma coluna para telas menores que 1330px */
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
   }
+
   .avatar {
-    text-align: center;
+      text-align: center;
   }
+
   .cv-button {
-    display: inline-block;
-    margin: 20px auto 0 auto;
-    width: auto;
-    text-align: center;
-    margin-bottom: 30px;
+      display: inline-block;
+      margin: 20px auto 0 auto;
+      width: auto;
+      text-align: center;
+      margin-bottom: 30px;
   }
 }
 
-@media (max-width: 854px) {
+/* NOVO AJUSTE: Telas entre 855px e 1024px (ou similar, ajuste conforme sua necessidade) */
+@media (max-width: 1024px) { /* Este breakpoint pode ser ajustado */
   .home {
-    /* padding: 60px 16px 32px 16px; */
-    /* padding: 0 24px;   Deixe ess */
-    /* grid-template-columns: 1fr; */
-    /* gap: 24px; */
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 16px 0 16px;
+      padding: 60px 40px 32px 40px; /* Ajuste o padding para estas telas */
+      display: grid; /* Mantém o grid */
+      grid-template-columns: 1fr 250px; /* Coluna para o texto e uma para a imagem (largura fixa) */
+      gap: 20px;
+      align-items: start; /* Alinha o conteúdo ao topo */
+  }
 
-  }
-  .name {
-    font-size: 2.5em;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
   .content {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 8px;
-    box-sizing: border-box;
-    text-align: center;
+      grid-column: 1; /* Ocupa a primeira coluna */
+      width: 100%; /* Ocupa a largura total da coluna */
+      max-width: none; /* Remove o max-width anterior */
+      text-align: left; /* Alinha o texto à esquerda */
+      padding: 0; /* Remove padding lateral que pode ter sido herdado */
   }
-  .des {
-    border-left: none;
-    padding-left: 0;
-    margin: 20px 0;
-    /* Removido text-align: center para manter justify em todos os tamanhos */
-  }
-  .avatar {
-    order: -1; /* Isso fará o avatar aparecer primeiro */
-    margin: 0 auto;
-    /* text-align: center; */
-  }
-  .card {
-    width: 80vw;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  .cv-button {
-    /* display: inline-block;
-    margin: 20px auto 0 auto;
-    width: auto;
-    text-align: center;
-    margin-bottom: 30px; */
-    order: 3;
-    margin-top: 16px;
-    align-self: center;
-    width: auto;
-    display: block;
-    margin-bottom: 30px;
-  }
-}
 
-@media (max-width: 480px) {
-  .home {
-    padding: 60px 16px 32px 16px !important;
-  }
   .name {
-    font-size: 1.5em;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+      font-size: 3.5em; /* Ajusta o tamanho do "BEM VINDO" */
+      text-align: left; /* Alinha o nome à esquerda */
+      white-space: normal; /* Permite que o texto quebre linha */
+      overflow: visible; /* Garante que o texto seja visível */
+      text-overflow: clip; /* Remove o ellipsis */
   }
-  .content {
-    padding: 0 2px;
-  }
+
   .des {
-    font-size: 1em;
-    margin: 10px 0;
+      border-left: .7em solid #3172ff; /* Mantém a borda à esquerda */
+      padding-left: 2em; /* Mantém o padding */
+      margin: 20px 0;
+      text-align: justify;
   }
+
   .avatar {
-    order: -1; /* Isso fará o avatar aparecer primeiro */
-    margin: 0 auto;
-    text-align: center;
+      grid-column: 2; /* Ocupa a segunda coluna */
+      text-align: center; /* Centraliza a imagem dentro de sua coluna */
+      margin: 0; /* Remove margem automática que pode atrapalhar */
   }
+
   .card {
-    width: 100%;
-    max-width: 220px;
+      width: 100%; /* Ocupa a largura total da coluna do avatar */
+      max-width: 250px; /* Limita o tamanho da imagem */
+      margin: 0 auto; /* Centraliza o card na coluna */
   }
+
   .img {
-    width: 100%;
-    height: auto;
-    max-width: 220px;
-    max-height: 220px;
-    display: block;
-    margin: 0 auto;
-    object-fit: cover;
+      height: auto;
+      max-width: 250px;
+      max-height: none; /* Remove a altura máxima para se ajustar ao conteúdo */
+      object-fit: contain; /* Ajusta a imagem dentro do contêiner sem cortar */
+      clip-path: none; /* Remove o clip-path para a imagem ser retangular */
   }
+
   .cv-button {
-    width: auto !important;
-    max-width: 220px;
-    margin: 12px auto 0 auto !important;
-    padding: 12px 0 !important;
-    display: block;
-    box-sizing: border-box;
-    margin-bottom: 30px;
+      grid-column: 1 / -1; /* Ocupa todas as colunas (abaixo da imagem e texto) */
+      margin-top: 30px;
+      display: block;
+      width: max-content;
+      margin-left: 0; /* Alinha o botão à esquerda */
   }
 }
 
-/* Ajuste para alinhar botão ao lado da imagem em mobile padrão, e abaixo em telas muito pequenas */
+
 @media (max-width: 854px) {
   .home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 16px 0 16px;
+      padding: 60px 16px 32px 16px;
+      display: flex; /* Volta para flexbox */
+      flex-direction: column; /* Empilha os itens */
+      align-items: center; /* Centraliza horizontalmente */
+      gap: 24px;
   }
+
+  .name {
+      font-size: 2.5em;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+
+  .content {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 8px;
+      box-sizing: border-box;
+      text-align: center;
+  }
+
+  .des {
+      border-left: none;
+      padding-left: 0;
+      margin: 20px 0;
+      text-align: justify;
+  }
+
   .avatar {
-    order: -1; /* Isso fará o avatar aparecer primeiro */
-    margin: 0 auto; /* Para centralizar o avatar */
+      order: -1; /* Coloca a imagem antes do conteúdo */
+      margin: 0 auto; /* Centraliza o avatar */
+      text-align: center; /* Garante que o conteúdo dentro do avatar seja centralizado */
   }
+
+  .card {
+      width: 80vw;
+      max-width: 300px;
+      margin: 0 auto;
+  }
+
   .cv-button {
-    order: 3;
-    margin-top: 16px;
-    align-self: center;
-    width: auto;
-    display: block;
-    margin-bottom: 30px;
+      order: 3; /* Move o botão para o final */
+      margin-top: 16px;
+      align-self: center;
+      width: auto;
+      display: block;
+      margin-bottom: 30px;
+  }
+
+  .img {
+      width: 100%;
+      height: auto;
+      max-width: 220px;
+      max-height: 220px;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+      clip-path: polygon(81% 0, 100% 18%, 100% 100%, 0 100%, 0 0); /* Volta o clip-path */
   }
 }
+
+/* Telas muito pequenas (celulares) */
+@media (max-width: 600px) {
+  .home {
+      padding: 40px 16px 32px 16px !important;
+      flex-direction: column; /* Garante que os itens fiquem em coluna */
+  }
+
+  .content {
+      order: 2; /* Texto depois da imagem */
+      width: 100%; /* Ocupa a largura total */
+      text-align: justify; /* Mantém o texto justificado */
+  }
+
+  .des {
+      margin: 10px 0;
+  }
+
+  .name {
+      font-size: 2em;
+      text-align: center;
+  }
+
+  .avatar {
+      order: 1; /* Imagem primeiro */
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  .card {
+      width: 100%;
+      max-width: 200px;
+  }
+
+  .img {
+      width: 100%;
+      height: auto;
+      max-width: 200px;
+      max-height: 200px;
+      margin: 0 auto;
+  }
+
+  .cv-button {
+      order: 3;
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px 0;
+      font-size: medium;
+  }
+}
+
 @media (max-width: 480px) {
   .home {
-    flex-direction: column;
-     padding: 60px 16px 0 16px;
+      padding: 60px 16px 32px 16px !important;
   }
-  .avatar, .cv-button {
-    width: 100%;
-    text-align: center;
+
+  .name {
+      font-size: 1.5em;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
   }
+
+  .content {
+      padding: 0 2px;
+  }
+
+  .des {
+      font-size: 1em;
+      margin: 10px 0;
+  }
+
+  .avatar {
+      order: -1;
+      margin: 0 auto;
+      text-align: center;
+  }
+
+  .card {
+      width: 100%;
+      max-width: 220px;
+  }
+
+  .img {
+      width: 100%;
+      height: auto;
+      max-width: 220px;
+      max-height: 220px;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+  }
+
   .cv-button {
-    margin-top: 8px;
-    width: 100%;
-    padding: 12px 16px; /* Adicionado padding lateral */  
-    margin-bottom: 30px;
+      width: auto !important;
+      max-width: 220px;
+      margin: 12px auto 0 auto !important;
+      padding: 12px 0 !important;
+      display: block;
+      box-sizing: border-box;
+      margin-bottom: 30px;
   }
-  .cv-button {
-    margin-top: 12px;
-    width: 100%;
-    align-self: center;
-    display: block;
-    padding: 12px 16px; /* Adicionado padding lateral */
-  }
-} 
+}
