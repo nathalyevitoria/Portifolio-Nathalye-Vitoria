@@ -16,16 +16,16 @@ export const certifications = [
 
   {
     id: "mecatronica",
-    name: "Técnico em Mecatrônica - IFSP GRU",
+    name: "Privacidade e proteção de Dados",
     description:
-      `Certificação obtida após conclusão do curso de Mecatrônica, abordando fundamentos de circuitos, componentes e montagem prática.`,
-    image: "/certifications/post2/vertical-certificate-sample.jpg",
+      `Certificação obtida após conclusão do curso rápido de Proteção de Dados, Abordando fundamentos de segurança, dados e legislações sobre proteção de dados, com a lei LGPD.`,
+    image: "/certifications/post2/Protecao_de_dados.png",
     media: [
-      { type: "image", src: "/certifications/post2/vertical-certificate-sample.jpg" },
-      { type: "image", src: "/certifications/post2/vertical-certificate-sample.jpg" }
+      { type: "image", src: "/certifications/post2/Protecao_de_dados.png" },
+      { type: "image", src: "/certifications/post2/Protecao_de_dados.png" }
     ],
-    institution: "IFSP",
-    year: 2023,
+    institution: "SENAI",
+    year: 2024,
     linkedProjects: ["painel"]
   },
 
