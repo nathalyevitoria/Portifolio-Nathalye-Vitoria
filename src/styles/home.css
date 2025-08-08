@@ -173,31 +173,30 @@ body.dark-mode .intro-text {
 .profile-card {
   display: inline-flex;
   flex-direction: column;
-  width: min(100%, 400px);
-  transition: 0.5s;
-}
-
-.profile-card {
-  display: inline-flex;
-  flex-direction: column;
   width: min(100%, 350px);
   height: min(350px, 40vh);
-  transition: all 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 1px 8px rgba(0, 0, 0, 0.05);
   position: relative;
   background-color: white;
   transform-style: preserve-3d;
   perspective: 1000px;
   aspect-ratio: 1/1;
+  /* Adicionando borda para simular profundidade */
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .profile-card:hover {
   box-shadow:
-      -30px -30px 60px rgba(154, 69, 233, 0.3),
-      30px 30px 60px rgba(69, 135, 233, 0.3);
-  transform: translateY(-5px) rotate(2deg);
+      -35px -35px 70px rgba(154, 69, 233, 0.35),
+      35px 35px 70px rgba(69, 135, 233, 0.35),
+      0 15px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px) rotate(3deg) scale(1.02);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .profile-image {
@@ -211,7 +210,57 @@ body.dark-mode .intro-text {
 }
 
 .profile-card:hover .profile-image {
-  transform: scale(1.03);
+  transform: scale(1.05);
+}
+
+/* Efeito de brilho para simular reflexão */
+.profile-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 4;
+  mix-blend-mode: overlay;
+}
+
+.profile-card:hover::before {
+  opacity: 1;
+}
+
+/* Efeito de ondulação ao clicar */
+.profile-card:active {
+  transform: translateY(-5px) rotate(1.5deg) scale(1.01);
+  box-shadow:
+      -20px -20px 40px rgba(154, 69, 233, 0.3),
+      20px 20px 40px rgba(69, 135, 233, 0.3),
+      0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Adicionando animação de "descascamento" */
+@keyframes peel-off {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.1),
+      0 1px 8px rgba(0, 0, 0, 0.05);
+  }
+  100% {
+    transform: translateY(-10px) rotate(3deg);
+    box-shadow:
+      -35px -35px 70px rgba(154, 69, 233, 0.35),
+      35px 35px 70px rgba(69, 135, 233, 0.35),
+      0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.profile-card:hover {
+  animation: peel-off 0.5s ease forwards;
 }
 
 /* Canto dobrado da imagem */
@@ -222,31 +271,13 @@ body.dark-mode .intro-text {
   right: 0;
   width: 70px;
   height: 70px;
-  background: linear-gradient(135deg, transparent 50%, #f0f0f0 50%);
+  background: linear-gradient(50deg, transparent 50%, #f0f0f0 50%);
   border-radius: 0 0 0 20px;
   box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   z-index: 2;
   transform: translate3d(0, 0, 1px);
   animation: fold-corner 0.5s ease-out forwards;
-}
-
-.profile-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 35px;
-  height: 35px;
-  background: linear-gradient(135deg, transparent 50%, rgba(134, 41, 255, 0.7) 50%);
-  z-index: 3;
-  transition: all 0.3s ease;
-  animation: fold-corner-accent 0.5s ease-out 0.1s forwards;
-}
-
-.profile-card:hover::after {
-  width: 70px;
-  height: 70px;
 }
 
 /* Botão */
