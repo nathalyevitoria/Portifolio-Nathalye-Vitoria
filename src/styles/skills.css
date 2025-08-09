@@ -1,0 +1,19 @@
+.skills-section {
+    padding: 4rem 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .skills-section h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .skills-section .container {
+    text-align: center;
+  }

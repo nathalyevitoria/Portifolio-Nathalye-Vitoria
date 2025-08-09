@@ -8,6 +8,7 @@ import LightButton from './components/LightButton'
 import Certifications from './pages/Certifications';
 import CertificationDetails from './pages/CertificationDetails';
 import CertificationProjects from './pages/CertificationProjects';
+import Skills from './pages/Skills';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/certifications" element={<Certifications />} />
         <Route path="/certifications/:id" element={<CertificationDetails />} />
         <Route path="/certifications/:id/projects" element={<CertificationProjects />} />
+        <Route path="/skills" element={<Skills />} />
       </Routes>
     </>
   )
