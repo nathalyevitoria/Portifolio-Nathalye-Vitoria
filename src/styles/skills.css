@@ -38,8 +38,10 @@ body {
   color: #555;
   display: flex;
   align-items: center;
+  justify-content: center; /* Adicionado para centralizar */
   gap: 0.5rem;
   text-align: center;
+  width: 100%; /* Garantir que ocupe toda a largura */
 }
 
 .cards-grid {
@@ -120,11 +122,6 @@ body {
   .skills-section h1 {
     font-size: 2.5rem;
   }
-  
-  .skill-section h2 {
-    font-size: 1.8rem;
-    align-items: center;
-  }
 }
 /* Modal Styles */
 
@@ -163,14 +160,14 @@ body {
 
 .modal-section-title {
   text-align: center;
-  font-size: 1.2rem; /* Reduzido o tamanho */
+  font-size: 1.4rem; /* Aumentado de 1.2rem para 1.4rem */
   font-weight: 600;
   color: #666;
-  padding: 0.6rem 1rem 0.4rem;
+  padding: 0.8rem 1rem 0.5rem; /* Aumentado um pouco o padding */
   background: linear-gradient(to right, rgba(49, 114, 255, 0.1), rgba(134, 41, 255, 0.1));
   border-radius: 10px 10px 0 0;
   letter-spacing: 0.5px;
-  flex-shrink: 0; /* Impede que encolha */
+  flex-shrink: 0;
 }
 
 .modal-close {
@@ -299,7 +296,7 @@ body {
   
   .skill-section h2 {
     font-size: 1.6rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
     text-align: center;
     justify-content: center;
     flex-direction: column;
@@ -336,9 +333,10 @@ body {
   }
   
   .modal-section-title {
-    font-size: 1rem;
-    padding: 0.5rem 0.8rem 0.3rem;
-  }
+    .modal-section-title {
+      font-size: 1.2rem; /* Aumentado de 1rem para 1.2rem */
+      padding: 0.6rem 0.8rem 0.4rem;
+    }
   
   .modal-overlay {
     padding: 2rem 1rem 1rem; /* Mais espaço na parte superior para evitar a navbar */
@@ -419,8 +417,8 @@ body {
   }
   
   .modal-section-title {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.6rem 0.2rem;
+    font-size: 1.1rem; /* Aumentado de 0.9rem para 1.1rem */
+    padding: 0.5rem 0.6rem 0.3rem;
   }
   
   .modal-overlay {
@@ -477,8 +475,8 @@ body {
   }
   
   .modal-section-title {
-    padding: 0.3rem 0.6rem 0.2rem;
-    font-size: 0.85rem;
+    font-size: 1rem; /* Aumentado de 0.85rem para 1rem */
+    padding: 0.4rem 0.6rem 0.2rem;
   }
   
   .modal-body h2 {
