@@ -36,6 +36,7 @@ const Skills = () => {
           <div 
             key={section.id} 
             className="skill-section"
+            id={section.id} // Adicionando ID à seção
             ref={el => sectionRefs.current[index] = el}
           >
             <h2>{section.title}</h2>
@@ -47,6 +48,8 @@ const Skills = () => {
                   title={skill.title}
                   description={skill.description}
                   delay={skillIndex * 100}
+                  sectionTitle={section.title}
+                  sectionId={section.id} // Passando o ID da seção
                 />
               ))}
             </div>

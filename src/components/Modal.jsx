@@ -1,20 +1,26 @@
 import React, { useEffect } from 'react';
 
-const Modal = ({ isOpen, onClose, title, description, image }) => {
+const Modal = ({ isOpen, onClose, title, description, image, sectionTitle, sectionId }) => {
   useEffect(() => {
     if (isOpen) {
-      // Travar a rolagem da página quando o modal estiver aberto
+      // Travar a rolagem da página
       document.body.style.overflow = 'hidden';
+      
+      // Rolar para a seção correspondente
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     } else {
-      // Liberar a rolagem quando o modal for fechado
-      document.body.style.overflow = 'unset';
+      // Destravar a rolagem da página
+      document.body.style.overflow = '';
     }
     
-    // Cleanup para garantir que a rolagem seja liberada quando o componente for desmontado
     return () => {
-      document.body.style.overflow = 'unset';
+      // Garantir que o scroll seja restaurado se o componente for desmontado
+      document.body.style.overflow = '';
     };
-  }, [isOpen]);
+  }, [isOpen, sectionId]);
 
   if (!isOpen) return null;
 
@@ -22,6 +28,11 @@ const Modal = ({ isOpen, onClose, title, description, image }) => {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose}>&times;</button>
+        
+        <div className="modal-section-title">
+          {sectionTitle}
+        </div>
+        
         <div className="modal-image-container">
           <img src={image} alt={title} className="modal-image" />
         </div>

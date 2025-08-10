@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
 
-const Card = ({ image, title, description, delay }) => {
+const Card = ({ image, title, description, delay, sectionTitle, sectionId }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -28,6 +28,8 @@ const Card = ({ image, title, description, delay }) => {
         title={title}
         description={description}
         image={image}
+        sectionTitle={sectionTitle}
+        sectionId={sectionId} // Passando o ID da seção
       />
     </>
   );
