@@ -9,7 +9,10 @@ const Modal = ({ isOpen, onClose, title, description, image, sectionTitle, secti
       // Rolar para a seção correspondente
       const section = document.getElementById(sectionId);
       if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Pequeno atraso para garantir que o modal esteja renderizado
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
       }
     } else {
       // Destravar a rolagem da página
@@ -27,7 +30,16 @@ const Modal = ({ isOpen, onClose, title, description, image, sectionTitle, secti
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose}>&times;</button>
+        <button 
+          className="modal-close" 
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
+          aria-label="Fechar"
+        >
+          &times;
+        </button>
         
         <div className="modal-section-title">
           {sectionTitle}

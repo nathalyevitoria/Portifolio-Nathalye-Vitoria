@@ -139,7 +139,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 9999; /* Z-index muito alto para garantir que fique acima da navbar */
   padding: 1rem;
   animation: fadeIn 0.3s ease;
   overflow: hidden;
@@ -185,13 +185,13 @@ body {
   height: 40px;
   font-size: 24px;
   cursor: pointer;
-  z-index: 1001; /* Aumentado para garantir que fique acima de tudo */
+  z-index: 10000; /* Ainda maior que o overlay */
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.3s ease, transform 0.2s ease;
   flex-shrink: 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Adicionada sombra para melhor visibilidade */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .modal-close:hover {
@@ -341,7 +341,7 @@ body {
   }
   
   .modal-overlay {
-    padding: 0.5rem;
+    padding: 2rem 1rem 1rem; /* Mais espaço na parte superior para evitar a navbar */
   }
   
   .modal-image-container {
@@ -367,8 +367,8 @@ body {
     width: 48px; /* Aumentado para facilitar o toque */
     height: 48px;
     font-size: 24px;
-    top: 12px;
-    right: 12px;
+    top: 20px;
+    right: 20px;
     background: rgba(0, 0, 0, 0.8); /* Fundo mais escuro para melhor contraste */
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada */
   }
@@ -413,7 +413,7 @@ body {
   
   /* Ajustes do modal */
   .modal-content {
-    height: 100vh;
+    height: calc(100vh - 3.5rem); /* Ajustar a altura considerando o padding extra */
     width: 100%;
     border-radius: 0;
   }
@@ -424,16 +424,16 @@ body {
   }
   
   .modal-overlay {
-    padding: 0;
+    padding: 3rem 0.5rem 0.5rem; /* Ainda mais espaço na parte superior */
   }
   
   .modal-image-container {
-    flex: 2.5; /* Aumenta um pouco a proporção da imagem */
+    flex: 2; /* Aumenta um pouco a proporção da imagem */
   }
   
   .modal-body {
-    padding: 0.8rem;
-    flex: 1.5; /* Aumenta um pouco a proporção do texto */
+    padding: 0.6rem;
+    flex: 1; /* Aumenta um pouco a proporção do texto */
   }
   
   .modal-body h2 {
@@ -447,19 +447,27 @@ body {
   }
   
   .modal-close {
-    width: 52px; /* Aumentado ainda mais para telas muito pequenas */
+    width: 52px;
     height: 52px;
     font-size: 26px;
-    top: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.85); /* Fundo quase preto para máximo contraste */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra mais forte */
-    border: 2px solid rgba(255, 255, 255, 0.3); /* Borda sutil para melhor visibilidade */
+    top: 30px; /* Mais afastado da parte superior */
+    right: 15px;
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
   }
 }
 
 /* Ajustes para dispositivos muito pequenos (altura reduzida) */
 @media (max-height: 700px) and (max-width: 480px) {
+  .modal-overlay {
+    padding: 2.5rem 0.5rem 0.5rem; /* Reduzir um pouco o padding superior em telas muito baixas */
+  }
+
+  .modal-content {
+    height: calc(100vh - 3rem);
+  }
+
   .modal-image-container {
     flex: 2; /* Reduz a proporção da imagem para telas muito pequenas */
   }
@@ -484,10 +492,9 @@ body {
   }
 
   .modal-close {
-    width: 44px; /* Ligeiramente menor para telas com altura reduzida */
+    top: 20px;
+    width: 44px;
     height: 44px;
     font-size: 22px;
-    top: 8px;
-    right: 8px;
   }
 }
