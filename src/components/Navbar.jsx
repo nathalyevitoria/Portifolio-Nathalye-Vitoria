@@ -96,7 +96,7 @@ function Navbar() {
     '/projects': 'Projetos',
     '/certifications': 'Certificados',
     '/contact': 'Contato',
-    '/skills': 'Habilidades', // Adicionar a nova página
+    '/skills': 'Habilidades', 
   };
 
   // Nome da página atual

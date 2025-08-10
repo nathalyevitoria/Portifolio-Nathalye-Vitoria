@@ -1,19 +1,413 @@
 .skills-section {
-    padding: 4rem 2rem;
-    max-width: 1300px;
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  padding: 4rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.skills-section h1 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #333;
+}
+
+.skill-section {
+  margin-bottom: 5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skill-section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.skill-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  cursor: pointer;
+}
+
+.skill-section.animate .skill-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.skill-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.card-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
   }
   
   .skills-section h1 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    text-align: center;
+    font-size: 2.5rem;
   }
   
-  .skills-section .container {
-    text-align: center;
+  .skill-section h2 {
+    font-size: 1.8rem;
+    align-items: center;
   }
+}
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+  overflow-y: auto; /* Permitir rolagem dentro do modal se o conteúdo for muito grande */
+  transition: all 0.3s ease;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 10px;
+  max-width: 1200px;
+  width: 100%;
+  max-height: calc(100vh - 4rem); /* Considerar o padding */
+  overflow: hidden;
+  position: relative;
+  animation: slideUp 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  margin: auto; /* Centralizar verticalmente */
+  transition: all 0.3s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-image-container {
+  width: 100%;
+  max-height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Garante que a imagem inteira seja visível sem cortes */
+  transition: transform 0.3s ease;
+}
+
+.modal-image:hover {
+  transform: scale(1.02);
+}
+
+.modal-body {
+  padding: 2rem;
+  overflow-y: auto; /* Permitir rolagem do texto se necessário */
+  max-height: 30vh; /* Limitar a altura do corpo para não ocupar toda a tela */
+}
+
+.modal-body h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+.modal-body p {
+  line-height: 1.6;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsividade para o Modal */
+@media (max-width: 768px) {
+  .modal-content {
+    max-height: calc(100vh - 2rem);
+    width: calc(100% - 2rem);
+  }
+  
+  .modal-image-container {
+    max-height: 60vh;
+  }
+  
+  .modal-body {
+    padding: 1.5rem;
+    max-height: 40vh;
+  }
+  
+  .modal-body h2 {
+    font-size: 1.5rem;
+  }
+  
+  .modal-body p {
+    font-size: 1rem;
+  }
+}
+
+/* Responsividade para o Modal - Versão aprimorada para mobile */
+@media (max-width: 768px) {
+  .modal-content {
+    max-height: calc(100vh - 1rem);
+    width: calc(100% - 1rem);
+    border-radius: 8px;
+  }
+  
+  .modal-overlay {
+    padding: 0.5rem;
+  }
+  
+  .modal-image-container {
+    max-height: 50vh;
+    background: #f0f0f0;
+  }
+  
+  .modal-body {
+    padding: 1.2rem;
+    max-height: 50vh;
+  }
+  
+  .modal-body h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .modal-body p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .modal-close {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Ajustes adicionais para dispositivos muito pequenos */
+@media (max-width: 480px) {
+  .modal-content {
+    max-height: 100vh;
+    width: 100%;
+    border-radius: 0;
+  }
+  
+  .modal-overlay {
+    padding: 0;
+  }
+  
+  .modal-image-container {
+    max-height: 45vh;
+  }
+  
+  .modal-body {
+    padding: 1rem;
+    max-height: 55vh;
+  }
+  
+  .modal-body h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .modal-body p {
+    font-size: 0.9rem;
+  }
+  
+  .modal-close {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+}
+
+/* Melhorias gerais para mobile na seção de habilidades */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 3rem 1rem;
+  }
+  
+  .skills-section h1 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .skill-section {
+    margin-bottom: 3rem;
+  }
+  
+  .skill-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .card-image {
+    height: 180px;
+  }
+  
+  .card-content {
+    padding: 1.2rem;
+  }
+  
+  .card-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .card-content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Ajustes para dispositivos muito pequenos */
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 2rem 0.8rem;
+  }
+  
+  .skills-section h1 {
+    font-size: 2rem;
+    margin-bottom: 1.8rem;
+  }
+  
+  .skill-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .card-image {
+    height: 160px;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+  
+  .card-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .card-content p {
+    font-size: 0.9rem;
+  }
+}
