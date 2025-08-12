@@ -13,6 +13,11 @@ body {
   overflow-y: auto;
   /* Adicionado para prevenir rolagem horizontal causada por elementos fora da tela */
   overflow-x: hidden; 
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
 a {
