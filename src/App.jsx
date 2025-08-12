@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import ProjectDetail from './pages/ProjectDetails'
-import LightButton from './components/LightButton'
+import DarkModeToggle from './components/DarkModeToggle'
 import Certifications from './pages/Certifications';
 import CertificationDetails from './pages/CertificationDetails';
 import CertificationProjects from './pages/CertificationProjects';
@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Navbar />      
-        <LightButton />
+        <DarkModeToggle />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />

@@ -1,21 +1,44 @@
-import React, { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react';
 
-function LightButton() {
-  const [darkMode, setDarkMode] = useState(false)
+function DarkModeToggle() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    document.body.classList.toggle('dark-mode', darkMode)
-  }, [darkMode])
+    // Verificar preferência salva no localStorage
+    const savedMode = localStorage.getItem('darkMode');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    const shouldBeDark = savedMode === 'true' || (!savedMode && prefersDark);
+    setIsDarkMode(shouldBeDark);
+    
+    if (shouldBeDark) {
+      document.body.classList.add('dark-mode');
+    }
+  }, []);
 
-  const toggleMode = () => {
-    setDarkMode(prev => !prev)
-  }
+  const toggleDarkMode = () => {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    
+    if (newMode) {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('darkMode', 'true');
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem('darkMode', 'false');
+    }
+  };
 
   return (
-    <button id="darkModeToggle" onClick={toggleMode}>
-      {darkMode ? '☀️' : '🌙'}
+    <button
+      className="dark-mode-toggle"
+      onClick={toggleDarkMode}
+      aria-label={isDarkMode ? 'Modo claro' : 'Modo escuro'}
+      title={isDarkMode ? 'Mudar para modo claro' : 'Mudar para modo escuro'}
+    >
+      {isDarkMode ? '☀️' : '🌙'}
     </button>
-  )
+  );
 }
 
-export default LightButton
+export default DarkModeToggle;
