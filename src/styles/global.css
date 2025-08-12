@@ -5,20 +5,13 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* background-color: #eef0fa; */
   line-height: 1.6;
   color: #111111;
   overflow-y: auto;
-  /* Adicionado para prevenir rolagem horizontal causada por elementos fora da tela */
   overflow-x: hidden; 
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+} */
 
 a {
   text-decoration: none;
