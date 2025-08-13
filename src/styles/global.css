@@ -1,4 +1,4 @@
-/* styles/global.css - Updated for large screens with mobile-inspired design */
+/* styles/global.css - Fixed navbar and dark mode toggle for large screens */
 
 /* RESET BÁSICO */
 * {
@@ -142,7 +142,7 @@
     width: 100%;
   }
   
-  /* NAVBAR - Updated with mobile-inspired design */
+  /* NAVBAR - Fixed for all screen sizes */
   .navbar-nav {
     display: flex;
     justify-content: center;
@@ -151,53 +151,97 @@
     position: relative;
   }
   
-  .nav-links {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex: 1;
-    font-weight: 600;
-    position: relative;
+  /* Desktop navbar - visible on screens > 768px */
+  @media (min-width: 769px) {
+    .nav-links {
+      display: flex !important;
+      gap: 30px;
+      justify-content: center;
+      flex: 1;
+      font-weight: 600;
+      position: relative;
+    }
+    
+    .nav-links a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      color: #111111;
+      transition: color 0.3s ease;
+      font-size: 1rem;
+      padding: 0.5rem 0;
+    }
+    
+    .nav-underline {
+      display: block !important;
+      height: 3px;
+      width: 100%;
+      margin-top: 4px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #3172ff 0%, #6718ce 20%, #8629ff 50%, #3172ff 80%, #6718ce 100%, #8629ff 120%, #3172ff 150%, #3172ff 200%);
+      background-size: 800% 100%;
+      background-repeat: repeat-x;
+      animation: move-gradient 6s linear infinite;
+    }
+    
+    .nav-links a:nth-child(1) .nav-underline {
+      background-position: 0% 0%;
+      background-size: 400% 100%;
+    }
+    .nav-links a:nth-child(2) .nav-underline {
+      background-position: 33.33% 0%;
+      background-size: 400% 100%;
+    }
+    .nav-links a:nth-child(3) .nav-underline {
+      background-position: 66.66% 0%;
+      background-size: 400% 100%;
+    }
+    .nav-links a:nth-child(4) .nav-underline {
+      background-position: 100% 0%;
+      background-size: 400% 100%;
+    }
+    
+    .hamburger {
+      display: none !important;
+    }
+    
+    .navbar-title {
+      display: none !important;
+    }
   }
   
-  .nav-links a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    color: #111111;
-    transition: color 0.3s ease;
-    font-size: 1rem;
-    padding: 0.5rem 0;
-  }
-  
-  .nav-underline {
-    display: block;
-    height: 3px;
-    width: 100%;
-    margin-top: 4px;
-    border-radius: 2px;
-    background: linear-gradient(90deg, #3172ff 0%, #6718ce 20%, #8629ff 50%, #3172ff 80%, #6718ce 100%, #8629ff 120%, #3172ff 150%, #3172ff 200%);
-    background-size: 800% 100%;
-    background-repeat: repeat-x;
-    animation: move-gradient 6s linear infinite;
-  }
-  
-  .nav-links a:nth-child(1) .nav-underline {
-    background-position: 0% 0%;
-    background-size: 400% 100%;
-  }
-  .nav-links a:nth-child(2) .nav-underline {
-    background-position: 33.33% 0%;
-    background-size: 400% 100%;
-  }
-  .nav-links a:nth-child(3) .nav-underline {
-    background-position: 66.66% 0%;
-    background-size: 400% 100%;
-  }
-  .nav-links a:nth-child(4) .nav-underline {
-    background-position: 100% 0%;
-    background-size: 400% 100%;
+  /* Mobile navbar - visible on screens <= 768px */
+  @media (max-width: 768px) {
+    .nav-underline {
+      display: none !important;
+    }
+    
+    .navbar-title {
+      display: block !important;
+      font-size: 1rem;
+      max-width: 70vw;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .navbar-nav {
+      justify-content: center;
+    }
+    
+    .nav-links {
+      display: none !important;
+    }
+    
+    .hamburger {
+      display: flex !important;
+      position: absolute;
+      right: 0;
+      left: auto;
+      margin-right: 0;
+    }
   }
   
   @keyframes move-gradient {
@@ -209,7 +253,6 @@
     }
   }
   
-  /* HAMBURGER MENU */
   .hamburger {
     display: none;
     flex-direction: column;
@@ -327,35 +370,36 @@
     margin-top: 60px;
   }
   
-  /* DARK MODE TOGGLE - Updated for large screens */
+  /* DARK MODE TOGGLE - Fixed for all screen sizes */
   .dark-mode-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: linear-gradient(135deg, #3172ff, #6718ce);
-    color: #fff;
-    border: none;
-    padding: 12px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    font-size: 20px;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    background: linear-gradient(135deg, #3172ff, #6718ce) !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 12px !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+    font-size: 20px !important;
+    z-index: 1000 !important;
+    transition: all 0.3s ease !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transform: none !important;
   }
   
   .dark-mode-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3) !important;
   }
   
   .dark-mode-toggle:active {
-    transform: scale(0.95);
+    transform: scale(0.95) !important;
   }
   
   /* DARK MODE STYLES - Updated */
@@ -464,38 +508,6 @@
   }
   
   /* RESPONSIVE DESIGN - Updated with mobile-inspired design for large screens */
-  @media (max-width: 854px) {
-    .nav-underline {
-        display: none;
-    }
-    
-    .navbar-title {
-        display: block;
-        font-size: 1rem;
-        max-width: 70vw;
-        text-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    
-    .navbar-nav {
-        justify-content: center;
-    }
-    
-    .nav-links {
-        display: none;
-    }
-    
-    .hamburger {
-        display: flex;
-        position: absolute;
-        right: 0;
-        left: auto;
-        margin-right: 0;
-    }
-  }
-  
   @media (max-width: 700px) {
     body {
         padding-top: 20px;
@@ -527,11 +539,11 @@
     }
     
     .dark-mode-toggle {
-        bottom: 15px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
+        bottom: 15px !important;
+        right: 15px !important;
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 18px !important;
     }
     
     .c1 {
@@ -599,17 +611,17 @@
     
     /* Dark mode button - larger and more prominent */
     .dark-mode-toggle {
-      width: 60px;
-      height: 60px;
-      font-size: 24px;
-      bottom: 30px;
-      right: 30px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      width: 60px !important;
+      height: 60px !important;
+      font-size: 24px !important;
+      bottom: 30px !important;
+      right: 30px !important;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25) !important;
     }
     
     .dark-mode-toggle:hover {
-      transform: scale(1.15);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      transform: scale(1.15) !important;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35) !important;
     }
     
     /* Action button - larger */
@@ -677,17 +689,17 @@
     
     /* Dark mode button - even larger */
     .dark-mode-toggle {
-      width: 70px;
-      height: 70px;
-      font-size: 28px;
-      bottom: 40px;
-      right: 40px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      width: 70px !important;
+      height: 70px !important;
+      font-size: 28px !important;
+      bottom: 40px !important;
+      right: 40px !important;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3) !important;
     }
     
     .dark-mode-toggle:hover {
-      transform: scale(1.2);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      transform: scale(1.2) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
     }
     
     /* Action button - even larger */
