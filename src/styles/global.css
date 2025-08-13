@@ -1,4 +1,4 @@
-/* styles/global.css - Fixed navbar for different screen sizes */
+/* styles/global.css - Clean version with fixed navbar and dark mode toggle */
 
 /* RESET BÁSICO */
 * {
@@ -208,7 +208,7 @@
     }
   }
   
-  /* HAMBURGER MENU - Base styles (hidden by default) */
+  /* HAMBURGER MENU - Base styles */
   .hamburger {
     display: none;
     flex-direction: column;
@@ -326,7 +326,7 @@
     margin-top: 60px;
   }
   
-  /* DARK MODE TOGGLE */
+  /* DARK MODE TOGGLE - Fixed with higher specificity */
   body .dark-mode-toggle {
     position: fixed !important;
     bottom: 20px !important;
@@ -462,26 +462,20 @@
     position: relative;
   }
   
-  /* MEDIA QUERIES - Simplified for navbar */
+  /* MEDIA QUERIES - Restructured for clarity */
   
-  /* Mobile screens (≤768px) */
+  /* Mobile-first approach - Base styles are for mobile, then we adjust for larger screens */
+  
+  /* Small screens (mobile) */
   @media (max-width: 768px) {
-    /* Hide inline navbar */
     .nav-links {
       display: none !important;
     }
     
-    /* Hide nav underlines */
     .nav-underline {
       display: none !important;
     }
     
-    /* Show hamburger menu */
-    .hamburger {
-      display: flex !important;
-    }
-    
-    /* Show page title */
     .navbar-title {
       display: block !important;
       font-size: 1rem;
@@ -492,7 +486,10 @@
       text-overflow: ellipsis;
     }
     
-    /* Adjust other elements for mobile */
+    .hamburger {
+      display: flex !important;
+    }
+    
     body {
       padding-top: 20px;
     }
@@ -525,29 +522,52 @@
     }
   }
   
-  /* Desktop screens (>768px) */
-  @media (min-width: 769px) {
-    /* Show inline navbar */
+  /* Medium screens (tablet) */
+  @media (min-width: 769px) and (max-width: 1023px) {
     .nav-links {
       display: flex !important;
     }
     
-    /* Show nav underlines */
     .nav-underline {
       display: block !important;
     }
     
-    /* Hide hamburger menu */
-    .hamburger {
-      display: none !important;
-    }
-    
-    /* Hide page title */
     .navbar-title {
       display: none !important;
     }
     
-    /* Adjust other elements for desktop */
+    .hamburger {
+      display: none !important;
+    }
+    
+    .page {
+      padding: 2.5rem 1.5rem;
+    }
+    
+    header {
+      padding: 0 25px;
+    }
+  }
+  
+  /* Large screens (desktop) */
+  @media (min-width: 1024px) {
+    .nav-links {
+      display: flex !important;
+      gap: 40px;
+    }
+    
+    .nav-underline {
+      display: block !important;
+    }
+    
+    .navbar-title {
+      display: none !important;
+    }
+    
+    .hamburger {
+      display: none !important;
+    }
+    
     .page {
       max-width: 1000px;
       padding: 4rem 3rem;
@@ -565,10 +585,6 @@
     }
     
     nav {
-      gap: 40px;
-    }
-    
-    .nav-links {
       gap: 40px;
     }
     
@@ -604,7 +620,7 @@
     }
   }
   
-  /* Large screens (≥1440px) */
+  /* Extra large screens */
   @media (min-width: 1440px) {
     body {
       font-size: 18px;
@@ -674,7 +690,7 @@
     }
   }
   
-  /* Extra large screens (≥1920px) */
+  /* Ultra large screens */
   @media (min-width: 1920px) {
     body {
       font-size: 20px;
