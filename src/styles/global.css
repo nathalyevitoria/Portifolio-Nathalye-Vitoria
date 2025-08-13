@@ -1,4 +1,4 @@
-/* styles/global.css - Fixed navbar and dark mode toggle for large screens */
+/* styles/global.css - Clean version with fixed navbar and dark mode toggle */
 
 /* RESET BÁSICO */
 * {
@@ -7,22 +7,21 @@
     box-sizing: border-box;
   }
   
-  /* ROOT STYLES - Updated with modern fonts */
-  :root {
+  /* ROOT STYLES */
+  /* :root {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.6;
     font-weight: 400;
-    color-scheme: light dark;
     color: #111111;
     background-color: #ffffff;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
+  } */
   
-  /* BODY STYLES - Updated */
-  body {
+  /* BODY STYLES */
+  /* body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.6;
     color: #111111;
@@ -31,9 +30,9 @@
     min-height: 100vh;
     background-color: #ffffff;
     transition: background-color 0.3s ease, color 0.3s ease;
-  }
+  } */
   
-  /* Link styles - Updated */
+  /* Link styles */
   a {
     text-decoration: none;
     color: inherit;
@@ -47,7 +46,7 @@
     text-shadow: 0 0 5px #3172ff;
   }
   
-  /* Heading styles - Updated with modern font */
+  /* Heading styles */
   h1 {
     font-size: 3.2em;
     line-height: 1.1;
@@ -60,7 +59,7 @@
     font-weight: 600;
   }
   
-  /* Button styles - Updated */
+  /* Button styles */
   button {
     border-radius: 8px;
     border: 1px solid transparent;
@@ -82,7 +81,7 @@
     outline: 4px auto -webkit-focus-ring-color;
   }
   
-  /* BLUR CIRCLES - Updated for all screens */
+  /* BLUR CIRCLES */
   .blur-circle {
     position: fixed;
     transform: translate(-50%, -50%);
@@ -115,7 +114,7 @@
     max-height: 800px;
   }
   
-  /* HEADER - Updated with mobile-inspired design for large screens */
+  /* HEADER */
   header {
     position: fixed;
     width: min(1300px, 100%);
@@ -142,7 +141,7 @@
     width: 100%;
   }
   
-  /* NAVBAR - Fixed for all screen sizes */
+  /* NAVBAR - Base styles */
   .navbar-nav {
     display: flex;
     justify-content: center;
@@ -151,97 +150,53 @@
     position: relative;
   }
   
-  /* Desktop navbar - visible on screens > 768px */
-  @media (min-width: 769px) {
-    .nav-links {
-      display: flex !important;
-      gap: 30px;
-      justify-content: center;
-      flex: 1;
-      font-weight: 600;
-      position: relative;
-    }
-    
-    .nav-links a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      color: #111111;
-      transition: color 0.3s ease;
-      font-size: 1rem;
-      padding: 0.5rem 0;
-    }
-    
-    .nav-underline {
-      display: block !important;
-      height: 3px;
-      width: 100%;
-      margin-top: 4px;
-      border-radius: 2px;
-      background: linear-gradient(90deg, #3172ff 0%, #6718ce 20%, #8629ff 50%, #3172ff 80%, #6718ce 100%, #8629ff 120%, #3172ff 150%, #3172ff 200%);
-      background-size: 800% 100%;
-      background-repeat: repeat-x;
-      animation: move-gradient 6s linear infinite;
-    }
-    
-    .nav-links a:nth-child(1) .nav-underline {
-      background-position: 0% 0%;
-      background-size: 400% 100%;
-    }
-    .nav-links a:nth-child(2) .nav-underline {
-      background-position: 33.33% 0%;
-      background-size: 400% 100%;
-    }
-    .nav-links a:nth-child(3) .nav-underline {
-      background-position: 66.66% 0%;
-      background-size: 400% 100%;
-    }
-    .nav-links a:nth-child(4) .nav-underline {
-      background-position: 100% 0%;
-      background-size: 400% 100%;
-    }
-    
-    .hamburger {
-      display: none !important;
-    }
-    
-    .navbar-title {
-      display: none !important;
-    }
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex: 1;
+    font-weight: 600;
+    position: relative;
   }
   
-  /* Mobile navbar - visible on screens <= 768px */
-  @media (max-width: 768px) {
-    .nav-underline {
-      display: none !important;
-    }
-    
-    .navbar-title {
-      display: block !important;
-      font-size: 1rem;
-      max-width: 70vw;
-      text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    
-    .navbar-nav {
-      justify-content: center;
-    }
-    
-    .nav-links {
-      display: none !important;
-    }
-    
-    .hamburger {
-      display: flex !important;
-      position: absolute;
-      right: 0;
-      left: auto;
-      margin-right: 0;
-    }
+  .nav-links a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    color: #111111;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+  
+  .nav-underline {
+    display: block;
+    height: 3px;
+    width: 100%;
+    margin-top: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #3172ff 0%, #6718ce 20%, #8629ff 50%, #3172ff 80%, #6718ce 100%, #8629ff 120%, #3172ff 150%, #3172ff 200%);
+    background-size: 800% 100%;
+    background-repeat: repeat-x;
+    animation: move-gradient 6s linear infinite;
+  }
+  
+  .nav-links a:nth-child(1) .nav-underline {
+    background-position: 0% 0%;
+    background-size: 400% 100%;
+  }
+  .nav-links a:nth-child(2) .nav-underline {
+    background-position: 33.33% 0%;
+    background-size: 400% 100%;
+  }
+  .nav-links a:nth-child(3) .nav-underline {
+    background-position: 66.66% 0%;
+    background-size: 400% 100%;
+  }
+  .nav-links a:nth-child(4) .nav-underline {
+    background-position: 100% 0%;
+    background-size: 400% 100%;
   }
   
   @keyframes move-gradient {
@@ -253,6 +208,7 @@
     }
   }
   
+  /* HAMBURGER MENU - Base styles */
   .hamburger {
     display: none;
     flex-direction: column;
@@ -361,7 +317,7 @@
     border-radius: 1px;
   }
   
-  /* PAGE CONTAINER - Updated with mobile-inspired design */
+  /* PAGE CONTAINER */
   .page {
     padding: 3rem 2rem;
     max-width: 800px;
@@ -370,8 +326,8 @@
     margin-top: 60px;
   }
   
-  /* DARK MODE TOGGLE - Fixed for all screen sizes */
-  .dark-mode-toggle {
+  /* DARK MODE TOGGLE - Fixed with higher specificity */
+  body .dark-mode-toggle {
     position: fixed !important;
     bottom: 20px !important;
     right: 20px !important;
@@ -390,19 +346,18 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    transform: none !important;
   }
   
-  .dark-mode-toggle:hover {
+  body .dark-mode-toggle:hover {
     transform: scale(1.1) !important;
     box-shadow: 0 6px 20px rgba(0,0,0,0.3) !important;
   }
   
-  .dark-mode-toggle:active {
+  body .dark-mode-toggle:active {
     transform: scale(0.95) !important;
   }
   
-  /* DARK MODE STYLES - Updated */
+  /* DARK MODE STYLES */
   body.dark-mode {
     background-color: #121212;
     color: #f0f0f0;
@@ -449,7 +404,7 @@
     filter: brightness(0.8);
   }
   
-  /* ACTION BUTTON - Updated with mobile-inspired design */
+  /* ACTION BUTTON */
   .action-button {
     font-size: large;
     font-weight: 600;
@@ -496,7 +451,7 @@
     mask-composite: exclude;
   }
   
-  /* CONTAINER PROJECT - Updated */
+  /* CONTAINER PROJECT */
   .container-project {
     width: 100%;
     max-width: 1200px;
@@ -507,124 +462,227 @@
     position: relative;
   }
   
-  /* RESPONSIVE DESIGN - Updated with mobile-inspired design for large screens */
-  @media (max-width: 700px) {
+  /* MEDIA QUERIES - Restructured for clarity */
+  
+  /* Mobile-first approach - Base styles are for mobile, then we adjust for larger screens */
+  
+  /* Small screens (mobile) */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none !important;
+    }
+    
+    .nav-underline {
+      display: none !important;
+    }
+    
+    .navbar-title {
+      display: block !important;
+      font-size: 1rem;
+      max-width: 70vw;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .hamburger {
+      display: flex !important;
+    }
+    
     body {
-        padding-top: 20px;
+      padding-top: 20px;
     }
     
     .page {
-        padding: 2rem 1rem;
-        margin-top: 60px;
+      padding: 2rem 1rem;
+      margin-top: 60px;
     }
     
     header {
-        padding: 0 15px;
+      padding: 0 15px;
     }
     
     .c1 {
-        width: 40vw;
-        height: 40vw;
+      width: 40vw;
+      height: 40vw;
     }
     
     .c2 {
-        width: 40vw;
-        height: 60vw;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .page {
-        padding: 1.5rem 1rem;
+      width: 40vw;
+      height: 60vw;
     }
     
     .dark-mode-toggle {
-        bottom: 15px !important;
-        right: 15px !important;
-        width: 45px !important;
-        height: 45px !important;
-        font-size: 18px !important;
-    }
-    
-    .c1 {
-        width: 30vw;
-        height: 30vw;
-    }
-    
-    .c2 {
-        width: 30vw;
-        height: 45vw;
+      bottom: 15px !important;
+      right: 15px !important;
+      width: 45px !important;
+      height: 45px !important;
+      font-size: 18px !important;
     }
   }
   
-  /* LARGE SCREENS - Updated with mobile-inspired design */
-  @media (min-width: 1440px) {
-    /* Replicate mobile styles but scaled up */
-    body {
-      font-size: 18px; /* Larger base font size */
+  /* Medium screens (tablet) */
+  @media (min-width: 769px) and (max-width: 1023px) {
+    .nav-links {
+      display: flex !important;
     }
     
-    h1 {
-      font-size: 4em; /* Larger headings */
+    .nav-underline {
+      display: block !important;
+    }
+    
+    .navbar-title {
+      display: none !important;
+    }
+    
+    .hamburger {
+      display: none !important;
+    }
+    
+    .page {
+      padding: 2.5rem 1.5rem;
+    }
+    
+    header {
+      padding: 0 25px;
+    }
+  }
+  
+  /* Large screens (desktop) */
+  @media (min-width: 1024px) {
+    .nav-links {
+      display: flex !important;
+      gap: 40px;
+    }
+    
+    .nav-underline {
+      display: block !important;
+    }
+    
+    .navbar-title {
+      display: none !important;
+    }
+    
+    .hamburger {
+      display: none !important;
     }
     
     .page {
       max-width: 1000px;
-      padding: 5rem 4rem; /* More padding like mobile */
+      padding: 4rem 3rem;
     }
     
     .container-project {
       max-width: 1400px;
-      padding: 0 60px; /* More padding like mobile */
+      padding: 0 40px;
     }
     
     header {
       width: min(1500px, 100%);
-      height: 80px; /* Taller header like mobile */
-      padding: 0 40px; /* More padding like mobile */
+      height: 70px;
+      padding: 0 30px;
     }
     
     nav {
-      gap: 40px; /* More spacing like mobile */
-    }
-    
-    .nav-links {
-      gap: 40px; /* More spacing like mobile */
+      gap: 40px;
     }
     
     .nav-links a {
-      font-size: 1.2rem; /* Larger font like mobile */
-      padding: 0.8rem 0; /* More padding like mobile */
+      font-size: 1.1rem;
+      padding: 0.7rem 0;
     }
     
     .c1 {
       max-width: 800px;
       max-height: 800px;
-      opacity: 0.15; /* More visible like mobile */
+      opacity: 0.15;
     }
     
     .c2 {
       max-width: 1000px;
       max-height: 1000px;
-      opacity: 0.15; /* More visible like mobile */
+      opacity: 0.15;
     }
     
-    /* Dark mode button - larger and more prominent */
+    .dark-mode-toggle {
+      width: 56px !important;
+      height: 56px !important;
+      font-size: 22px !important;
+      bottom: 25px !important;
+      right: 25px !important;
+    }
+    
+    .action-button {
+      font-size: 1.2rem;
+      padding: 22px 35px;
+      border-radius: 45px;
+    }
+  }
+  
+  /* Extra large screens */
+  @media (min-width: 1440px) {
+    body {
+      font-size: 18px;
+    }
+    
+    h1 {
+      font-size: 4em;
+    }
+    
+    .page {
+      max-width: 1200px;
+      padding: 5rem 4rem;
+    }
+    
+    .container-project {
+      max-width: 1600px;
+      padding: 0 60px;
+    }
+    
+    header {
+      width: min(1800px, 100%);
+      height: 80px;
+      padding: 0 40px;
+    }
+    
+    nav {
+      gap: 50px;
+    }
+    
+    .nav-links {
+      gap: 50px;
+    }
+    
+    .nav-links a {
+      font-size: 1.2rem;
+      padding: 0.8rem 0;
+    }
+    
+    .blur-circle {
+      filter: blur(120px);
+    }
+    
+    .c1 {
+      max-width: 1000px;
+      max-height: 1000px;
+      opacity: 0.2;
+    }
+    
+    .c2 {
+      max-width: 1200px;
+      max-height: 1200px;
+      opacity: 0.2;
+    }
+    
     .dark-mode-toggle {
       width: 60px !important;
       height: 60px !important;
       font-size: 24px !important;
       bottom: 30px !important;
       right: 30px !important;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25) !important;
     }
     
-    .dark-mode-toggle:hover {
-      transform: scale(1.15) !important;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.35) !important;
-    }
-    
-    /* Action button - larger */
     .action-button {
       font-size: 1.4rem;
       padding: 24px 40px;
@@ -632,77 +690,53 @@
     }
   }
   
-  /* EXTRA LARGE SCREENS - Updated with mobile-inspired design */
+  /* Ultra large screens */
   @media (min-width: 1920px) {
     body {
-      font-size: 20px; /* Even larger base font size */
+      font-size: 20px;
     }
     
     h1 {
-      font-size: 4.5em; /* Even larger headings */
+      font-size: 4.5em;
     }
     
     .page {
-      max-width: 1200px;
-      padding: 6rem 5rem; /* Even more padding */
+      max-width: 1400px;
+      padding: 6rem 5rem;
     }
     
     .container-project {
-      max-width: 1600px;
-      padding: 0 80px; /* Even more padding */
+      max-width: 1800px;
+      padding: 0 80px;
     }
     
     header {
-      width: min(1800px, 100%);
-      height: 90px; /* Even taller header */
-      padding: 0 60px; /* Even more padding */
+      width: min(2000px, 100%);
+      height: 90px;
+      padding: 0 60px;
     }
     
     nav {
-      gap: 50px; /* Even more spacing */
+      gap: 60px;
     }
     
     .nav-links {
-      gap: 50px; /* Even more spacing */
+      gap: 60px;
     }
     
     .nav-links a {
-      font-size: 1.4rem; /* Even larger font */
-      padding: 1rem 0; /* Even more padding */
+      font-size: 1.4rem;
+      padding: 1rem 0;
     }
     
-    .blur-circle {
-      filter: blur(120px); /* More blur for larger screens */
-    }
-    
-    .c1 {
-      max-width: 1000px;
-      max-height: 1000px;
-      opacity: 0.2; /* Even more visible */
-    }
-    
-    .c2 {
-      max-width: 1200px;
-      max-height: 1200px;
-      opacity: 0.2; /* Even more visible */
-    }
-    
-    /* Dark mode button - even larger */
     .dark-mode-toggle {
       width: 70px !important;
       height: 70px !important;
       font-size: 28px !important;
       bottom: 40px !important;
       right: 40px !important;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3) !important;
     }
     
-    .dark-mode-toggle:hover {
-      transform: scale(1.2) !important;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
-    }
-    
-    /* Action button - even larger */
     .action-button {
       font-size: 1.6rem;
       padding: 28px 50px;
