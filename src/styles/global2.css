@@ -1,89 +1,44 @@
-/* styles/global.css - Consolidated and optimized */
-
-/* RESET BÁSICO */
+/* RESET BÁSICO - Corrigido */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  /* ROOT STYLES - Consolidated from both files */
-  :root {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    font-weight: 400;
-    color-scheme: light dark;
-    color: #111111;
-    background-color: #ffffff;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  /* BODY STYLES - Resolved conflicts */
+  /* BODY - Corrigido para remover conflitos */
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #111111;
     overflow-y: auto;
     overflow-x: hidden;
+    /* Removido display: flex e place-items: center que causavam conflitos */
     min-height: 100vh;
     background-color: #ffffff;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   
-  /* Link styles - Resolved conflicts */
+  /* Link styles - Corrigido */
   a {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
-    font-weight: 500;
-    color: #646cff;
   }
   
   a:hover {
-    color: #535bf2;
+    color: #6718ce;
     text-shadow: 0 0 5px #3172ff;
   }
   
-  /* Heading styles */
-  h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
-  }
-  
-  /* Button styles */
-  button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
-  }
-  
-  button:hover {
-    border-color: #646cff;
-  }
-  
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-  
-  /* BLUR CIRCLES - Optimized for all screens */
+  /* BLUR CIRCLES - Corrigido para melhor performance */
   .blur-circle {
-    position: fixed;
+    position: fixed; /* Mudado de absolute para fixed */
     transform: translate(-50%, -50%);
     border-radius: 50%;    
     filter: blur(100px);
     z-index: -1;
     pointer-events: none;
-    will-change: transform;
+    will-change: transform; /* Melhor performance */
   }
   
   .c1 {
@@ -108,7 +63,7 @@
     max-height: 800px;
   }
   
-  /* HEADER - Resolved conflicts and optimized */
+  /* HEADER - Corrigido */
   header {
     position: fixed;
     width: min(1300px, 100%);
@@ -135,7 +90,7 @@
     width: 100%;
   }
   
-  /* NAVBAR RESPONSIVA - Optimized */
+  /* NAVBAR RESPONSIVA - Corrigido */
   .navbar-nav {
     display: flex;
     justify-content: center;
@@ -200,7 +155,7 @@
     }
   }
   
-  /* HAMBURGER MENU */
+  /* HAMBURGER MENU - Corrigido */
   .hamburger {
     display: none;
     flex-direction: column;
@@ -240,7 +195,7 @@
     color: #111111;
   }
   
-  /* SIDEBAR */
+  /* SIDEBAR - Corrigido */
   .sidebar-overlay {
     position: fixed;
     top: 0;
@@ -309,20 +264,20 @@
     border-radius: 1px;
   }
   
-  /* PAGE CONTAINER - Optimized for all screens */
+  /* PAGE CONTAINER - Corrigido */
   .page {
     padding: 3rem 2rem;
     max-width: 800px;
     margin: 0 auto;
-    min-height: calc(100vh - 60px);
-    margin-top: 60px;
+    min-height: calc(100vh - 60px); /* Ajustado para considerar header */
+    margin-top: 60px; /* Espaço para header fixo */
   }
   
-  /* DARK MODE TOGGLE - Optimized */
+  /* DARK MODE TOGGLE - Corrigido e melhorado */
   .dark-mode-toggle {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 20px; /* Mudado para direita para melhor UX */
     background: linear-gradient(135deg, #3172ff, #6718ce);
     color: #fff;
     border: none;
@@ -349,7 +304,7 @@
     transform: scale(0.95);
   }
   
-  /* DARK MODE STYLES - Resolved conflicts */
+  /* DARK MODE STYLES - Corrigido */
   body.dark-mode {
     background-color: #121212;
     color: #f0f0f0;
@@ -396,7 +351,7 @@
     filter: brightness(0.8);
   }
   
-  /* ACTION BUTTON */
+  /* ACTION BUTTON - Corrigido */
   .action-button {
     font-size: large;
     font-weight: bold;
@@ -443,7 +398,7 @@
     mask-composite: exclude;
   }
   
-  /* CONTAINER PROJECT */
+  /* CONTAINER PROJECT - Corrigido */
   .container-project {
     width: 100%;
     max-width: 1200px;
@@ -454,7 +409,7 @@
     position: relative;
   }
   
-  /* RESPONSIVE DESIGN - Optimized for all screen sizes */
+  /* RESPONSIVE DESIGN - Corrigido e otimizado */
   @media (max-width: 854px) {
     .nav-underline {
         display: none;
@@ -536,88 +491,12 @@
     }
   }
   
-  /* LARGE SCREENS - Added support for displays 1440px and up */
-  @media (min-width: 1440px) {
-    .page {
-      max-width: 1000px;
-      padding: 4rem 3rem;
-    }
-    
-    .container-project {
-      max-width: 1400px;
-      padding: 0 40px;
-    }
-    
-    header {
-      width: min(1500px, 100%);
-      padding: 0 30px;
-    }
-    
-    .c1 {
-      max-width: 800px;
-      max-height: 800px;
-    }
-    
-    .c2 {
-      max-width: 1000px;
-      max-height: 1000px;
-    }
-    
-    nav {
-      gap: 40px;
-    }
-    
-    .nav-links {
-      gap: 40px;
-    }
-  }
-  
-  /* EXTRA LARGE SCREENS - Added support for displays 1920px and up */
-  @media (min-width: 1920px) {
-    .page {
-      max-width: 1200px;
-      padding: 5rem 4rem;
-    }
-    
-    .container-project {
-      max-width: 1600px;
-      padding: 0 60px;
-    }
-    
-    header {
-      width: min(1800px, 100%);
-      padding: 0 40px;
-    }
-    
-    .c1 {
-      max-width: 1000px;
-      max-height: 1000px;
-    }
-    
-    .c2 {
-      max-width: 1200px;
-      max-height: 1200px;
-    }
-    
-    .blur-circle {
-      filter: blur(120px);
-    }
-    
-    nav {
-      gap: 50px;
-    }
-    
-    .nav-links {
-      gap: 50px;
-    }
-  }
-  
   /* HELPER CLASSES */
   .hidden {
     display: none !important;
   }
   
-  /* SCROLLBAR STYLING */
+  /* SCROLLBAR STYLING - Adicionado para melhor UX */
   ::-webkit-scrollbar {
     width: 8px;
   }
